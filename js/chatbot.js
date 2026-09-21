@@ -24,10 +24,18 @@
     if (isOpen) {
       widget.classList.add("active");
       launcher.classList.add("hidden");
-      if (inputField) inputField.focus();
+      if (window.innerWidth <= 640) {
+        document.body.classList.add("chat-modal-open");
+      }
+      if (inputField) {
+        setTimeout(() => {
+          inputField.focus();
+        }, 150);
+      }
     } else {
       widget.classList.remove("active");
       launcher.classList.remove("hidden");
+      document.body.classList.remove("chat-modal-open");
     }
   }
 

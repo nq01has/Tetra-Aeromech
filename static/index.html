@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0070F2" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tetra Aeromech">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
   <title>Tetra Aeromech | Sub-Micron Precision CNC & VMC Manufacturing</title>
   <meta name="description" content="Precision Engineering & 5-Axis CNC/VMC Machining for Aerospace, Defense, Automotive & Industrial Applications. AS9100D aligned, AS9102 FAIR compliant, manufacturing from Bangalore, India.">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="apple-touch-icon" href="/images/logo.png">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -257,17 +266,94 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <a href="#capabilities" class="mobile-link" data-i18n="nav_capabilities">Capabilities</a>
-    <a href="#metrology" class="mobile-link" data-i18n="nav_metrology">Quality & Metrology</a>
-    <a href="#components" class="mobile-link" data-i18n="nav_components">Components</a>
-    <a href="#supply-chain" class="mobile-link" data-i18n="nav_supply_chain">Supply Chain & 7S</a>
-    <a href="#sustainability" class="mobile-link" data-i18n="nav_sustainability">Sustainability</a>
-    <a href="#leadership" class="mobile-link" data-i18n="nav_leadership">Leadership</a>
-    <a href="#careers" class="mobile-link" data-i18n="nav_careers">Careers</a>
-    <a href="#contact" class="mobile-link" data-i18n="nav_contact">Contact</a>
-    <a href="#rfq" class="btn btn-primary" data-i18n="nav_rfq_btn">Request Quote (RFQ)</a>
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+
+  <!-- Mobile Drawer Menu (iOS / Android Native Experience) -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-brand">
+        <img src="/images/logo.png" alt="Tetra Aeromech" class="mobile-drawer-logo">
+        <div class="mobile-drawer-caption">Precision CNC & VMC</div>
+      </div>
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">✕</button>
+    </div>
+
+    <nav class="mobile-nav-list">
+      <a href="#capabilities" class="mobile-nav-item">
+        <span class="mobile-nav-icon">⚙️</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_capabilities">Capabilities</div>
+          <div class="mobile-nav-sub">5-Axis VMC & CNC Turn-Mill</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#metrology" class="mobile-nav-item">
+        <span class="mobile-nav-icon">📐</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_metrology">Quality & Metrology</div>
+          <div class="mobile-nav-sub">Zeiss CMM & AS9102 FAIR</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#components" class="mobile-nav-item">
+        <span class="mobile-nav-icon">🔩</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_components">Components</div>
+          <div class="mobile-nav-sub">Aerospace & Defense Parts</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#supply-chain" class="mobile-nav-item">
+        <span class="mobile-nav-icon">⚡</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_supply_chain">Supply Chain & 7S</div>
+          <div class="mobile-nav-sub">Lean Kanban & Traceability</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#sustainability" class="mobile-nav-item">
+        <span class="mobile-nav-icon">🌱</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_sustainability">Sustainability</div>
+          <div class="mobile-nav-sub">Closed-Loop & Swarf Recycling</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#leadership" class="mobile-nav-item">
+        <span class="mobile-nav-icon">👥</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_leadership">Leadership</div>
+          <div class="mobile-nav-sub">4 Aerospace Co-Founders</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#careers" class="mobile-nav-item">
+        <span class="mobile-nav-icon">💼</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_careers">Careers</div>
+          <div class="mobile-nav-sub">Engineering & Machining Roles</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+      <a href="#contact" class="mobile-nav-item">
+        <span class="mobile-nav-icon">📍</span>
+        <div class="mobile-nav-content">
+          <div class="mobile-nav-title" data-i18n="nav_contact">Contact Facility</div>
+          <div class="mobile-nav-sub">Bangalore Plant & Vendor Desk</div>
+        </div>
+        <span class="mobile-nav-arrow">›</span>
+      </a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <button class="btn btn-outline btn-block mobile-chat-btn" id="mobileChatLauncher">
+        🤖 <span>Ask Tetra AI Concierge</span>
+      </button>
+      <a href="#rfq" class="btn btn-primary btn-block mobile-rfq-btn" data-i18n="nav_rfq_btn">
+        Request Precision Quote (RFQ)
+      </a>
+    </div>
   </div>
 
   <main>

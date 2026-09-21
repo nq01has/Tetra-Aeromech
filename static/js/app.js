@@ -566,17 +566,77 @@
   function initNav() {
     const mobileToggle = document.getElementById("mobileToggle");
     const mobileDrawer = document.getElementById("mobileDrawer");
+    const mobileOverlay = document.getElementById("mobileDrawerOverlay");
+    const mobileClose = document.getElementById("mobileDrawerClose");
+    const mobileChatBtn = document.getElementById("mobileChatLauncher");
+
+    function closeDrawer() {
+      if (mobileDrawer) mobileDrawer.classList.remove("active");
+      if (mobileOverlay) mobileOverlay.classList.remove("active");
+      if (mobileToggle) mobileToggle.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    function openDrawer() {
+      if (mobileDrawer) mobileDrawer.classList.add("active");
+      if (mobileOverlay) mobileOverlay.classList.add("active");
+      if (mobileToggle) mobileToggle.classList.add("active");
+      document.body.classList.add("menu-open");
+    }
 
     if (mobileToggle && mobileDrawer) {
       mobileToggle.addEventListener("click", () => {
-        mobileDrawer.classList.toggle("active");
+        if (mobileDrawer.classList.contains("active")) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
       });
 
-      document.querySelectorAll(".mobile-link").forEach(link => {
-        link.addEventListener("click", () => {
-          mobileDrawer.classList.remove("active");
-        });
+      if (mobileOverlay) {
+        mobileOverlay.addEventListener("click", closeDrawer);
+      }
+
+      if (mobileClose) {
+        mobileClose.addEventListener("click", closeDrawer);
+      }
+
+      // Close when clicking any nav link inside drawer
+      document.querySelectorAll(".mobile-nav-item, .mobile-rfq-btn, .mobile-link").forEach(link => {
+        link.addEventListener("click", closeDrawer);
       });
+
+      // Mobile chat launcher
+      if (mobileChatBtn) {
+        mobileChatBtn.addEventListener("click", () => {
+          closeDrawer();
+          if (typeof window.openChat === "function") {
+            window.openChat();
+          }
+        });
+      }
+
+      // Close on ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileDrawer.classList.contains("active")) {
+          closeDrawer();
+        }
+      });
+
+      // Touch swipe right to close drawer on mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      mobileDrawer.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      mobileDrawer.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX - touchStartX > 60) {
+          // Swiped right -> close
+          closeDrawer();
+        }
+      }, { passive: true });
     }
 
     // Language Dropdown

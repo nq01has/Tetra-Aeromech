@@ -1,0 +1,9 @@
+data/*.db
+uploads/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.log
+.env
+*.sqlite

@@ -627,3 +627,160 @@
     setLanguage("en");
   });
 })();
+
+/* ==========================================================================
+   UX ENHANCEMENTS — Scroll Reveal, Scroll-to-Top, Progress Bar, Active Nav
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  // ------------------------------------------------------------------
+  // 1. Scroll-Reveal via Intersection Observer
+  // ------------------------------------------------------------------
+  function initScrollReveal() {
+    const opts = { threshold: 0.12, rootMargin: "0px 0px -40px 0px" };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // fire once
+        }
+      });
+    }, opts);
+
+    document
+      .querySelectorAll(".reveal, .reveal-group, .reveal-left, .reveal-right, .reveal-scale")
+      .forEach((el) => observer.observe(el));
+  }
+
+  // ------------------------------------------------------------------
+  // 2. Scroll-to-Top Button
+  // ------------------------------------------------------------------
+  function initScrollTop() {
+    const btn = document.getElementById("scrollTopBtn");
+    if (!btn) return;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        btn.classList.add("visible");
+      } else {
+        btn.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // ------------------------------------------------------------------
+  // 3. Page Scroll Progress Bar
+  // ------------------------------------------------------------------
+  function initProgressBar() {
+    const bar = document.getElementById("pageProgress");
+    if (!bar) return;
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = pct.toFixed(1) + "%";
+    }, { passive: true });
+  }
+
+  // ------------------------------------------------------------------
+  // 4. Active Nav Section Highlighting
+  // ------------------------------------------------------------------
+  function initActiveNav() {
+    // Map section ids to nav button text
+    const sectionMap = {
+      "capabilities": "Capabilities",
+      "metrology": "Quality & Metrology",
+      "components": "Components",
+      "supply-chain": "Supply Chain & 7S",
+      "sustainability": "Sustainability",
+      "leadership": "Company",
+      "careers": "Company",
+      "contact": "Company",
+      "rfq": null, // no nav item
+    };
+
+    const navBtns = document.querySelectorAll(".nav-link-btn");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const sid = entry.target.id;
+        const label = sectionMap[sid];
+
+        navBtns.forEach((btn) => {
+          const parentItem = btn.closest(".nav-item");
+          const btnText = btn.querySelector("span[data-i18n], span:first-child");
+          const text = btnText ? btnText.textContent.trim() : btn.textContent.trim();
+
+          if (label && text.startsWith(label.split("&")[0].trim())) {
+            btn.classList.add("active-section");
+            if (parentItem) parentItem.classList.add("active-section");
+          } else {
+            btn.classList.remove("active-section");
+            if (parentItem) parentItem.classList.remove("active-section");
+          }
+        });
+      });
+    }, { threshold: 0.25 });
+
+    Object.keys(sectionMap).forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  }
+
+  // ------------------------------------------------------------------
+  // 5. Smooth hover ripple on CTA buttons
+  // ------------------------------------------------------------------
+  function initButtonRipple() {
+    document.querySelectorAll(".btn").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const ripple = document.createElement("span");
+        ripple.style.cssText = `
+          position:absolute;left:${x}px;top:${y}px;
+          width:0;height:0;border-radius:50%;
+          background:rgba(255,255,255,0.35);
+          transform:translate(-50%,-50%);
+          animation:rippleAnim 0.55s ease-out forwards;
+          pointer-events:none;
+        `;
+        if (!btn.style.position || btn.style.position === "static") {
+          btn.style.position = "relative";
+          btn.style.overflow = "hidden";
+        }
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Inject ripple keyframe once
+    if (!document.getElementById("ripple-style")) {
+      const s = document.createElement("style");
+      s.id = "ripple-style";
+      s.textContent = `@keyframes rippleAnim {
+        to { width: 280px; height: 280px; opacity: 0; }
+      }`;
+      document.head.appendChild(s);
+    }
+  }
+
+  // ------------------------------------------------------------------
+  // Boot all UX enhancements
+  // ------------------------------------------------------------------
+  window.addEventListener("DOMContentLoaded", () => {
+    initScrollReveal();
+    initScrollTop();
+    initProgressBar();
+    initActiveNav();
+    initButtonRipple();
+  });
+})();

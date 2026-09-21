@@ -9,9 +9,16 @@
 </head>
 <body>
 
+  <!-- Page scroll progress bar -->
+  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+
   <!-- ========================================================================
        APPLE-STYLE FROSTED HEADER & MEGA DROPDOWN NAVIGATION
        ======================================================================== -->
+
   <header class="site-header">
     <div class="container nav-bar">
       <!-- Prominent Brand Logo -->
@@ -269,26 +276,26 @@
          ======================================================================== -->
     <section class="hero-section" id="home">
       <div class="container hero-inner">
-        <div class="badge-pill" data-i18n="hero_badge">
+        <div class="badge-pill hero-animate" data-i18n="hero_badge">
           AS9100D & ISO 9001:2015 ALIGNED PRECISION MANUFACTURING
         </div>
         
-        <h1 class="hero-headline">
+        <h1 class="hero-headline hero-animate">
           Sub-Micron Precision CNC & VMC Manufacturing<br>
           <span class="text-blue">for Global Aerospace, Defense & Industrial Applications</span>
         </h1>
 
-        <p class="hero-desc" data-i18n="hero_desc">
+        <p class="hero-desc hero-animate" data-i18n="hero_desc">
           Specialized in 5-axis simultaneous machining of mission-critical, close-tolerance components manufactured to customer drawings, 3D CAD models, GD&T requirements, and aerospace material specifications. Manufactured with pride from India.
         </p>
 
-        <div class="hero-cta-row">
+        <div class="hero-cta-row hero-animate">
           <a href="#rfq" class="btn btn-primary" data-i18n="hero_cta_rfq">Launch Interactive RFQ</a>
           <a href="#capabilities" class="btn btn-secondary">Explore Capabilities Matrix</a>
         </div>
 
         <!-- Telemetry Metrics Row -->
-        <div class="metrics-row">
+        <div class="metrics-row reveal-group hero-animate">
           <div class="metric-card">
             <div class="metric-val" data-i18n="stat_tolerance_val">±0.002 mm</div>
             <div class="metric-lbl" data-i18n="stat_tolerance_lbl">Tightest Machining Tolerance</div>
@@ -314,7 +321,7 @@
          ======================================================================== -->
     <section class="capabilities-section" id="capabilities">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="cap_section_badge">MANUFACTURING ARSENAL</div>
           <h2 class="section-title" data-i18n="cap_title">End-to-End Precision Engineering Capabilities</h2>
           <p class="section-subtitle" data-i18n="cap_subtitle">
@@ -332,7 +339,7 @@
 
         <!-- Tab 1: 5-Axis VMC -->
         <div class="tab-content active" id="tab-vmc">
-          <div class="capability-feature-grid">
+          <div class=capability-feature-grid reveal-group">
             <div>
               <h3 class="cap-detail-title">Simultaneous 5-Axis Machining Centers</h3>
               <p class="cap-detail-text">
@@ -369,7 +376,7 @@
 
         <!-- Tab 2: Turn-Mill -->
         <div class="tab-content" id="tab-turning">
-          <div class="capability-feature-grid">
+          <div class=capability-feature-grid reveal-group">
             <div>
               <h3 class="cap-detail-title">High-Precision Multi-Axis CNC Turning & Turn-Mill</h3>
               <p class="cap-detail-text">
@@ -406,7 +413,7 @@
 
         <!-- Tab 3: Superalloys -->
         <div class="tab-content" id="tab-alloys">
-          <div class="capability-feature-grid">
+          <div class=capability-feature-grid reveal-group">
             <div>
               <h3 class="cap-detail-title">Advanced Aerospace Alloys & Superalloys</h3>
               <p class="cap-detail-text">
@@ -443,7 +450,7 @@
 
         <!-- Tab 4: Finishing -->
         <div class="tab-content" id="tab-finishing">
-          <div class="capability-feature-grid">
+          <div class=capability-feature-grid reveal-group">
             <div>
               <h3 class="cap-detail-title">Deburring, Surface Finishing & Special Processes</h3>
               <p class="cap-detail-text">
@@ -485,7 +492,7 @@
          ======================================================================== -->
     <section class="metrology-section" id="metrology">
       <div class="container">
-        <div class="metrology-grid">
+        <div class=metrology-grid reveal-group">
           <div>
             <div class="badge-pill" data-i18n="metro_badge">METROLOGY & DEFENSE COMPLIANCE</div>
             <h2 class="section-title" data-i18n="metro_title">Zero-Defect Quality Assurance & AS9102 FAIR</h2>
@@ -554,7 +561,7 @@
          ======================================================================== -->
     <section class="components-section" id="components">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="gallery_badge">MANUFACTURED COMPONENTS</div>
           <h2 class="section-title" data-i18n="gallery_title">Precision Component Gallery</h2>
           <p class="section-subtitle" data-i18n="gallery_subtitle">
@@ -582,7 +589,7 @@
          ======================================================================== -->
     <section class="supply-section" id="supply-chain">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="supply_badge">OPERATIONAL EXCELLENCE</div>
           <h2 class="section-title" data-i18n="supply_title">Lean 7S & Kanban Supply Chain Integration</h2>
           <p class="section-subtitle" data-i18n="supply_subtitle">
@@ -668,7 +675,7 @@
          ======================================================================== -->
     <section class="sustainability-section" id="sustainability">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="esg_badge">SUSTAINABILITY & ESG</div>
           <h2 class="section-title" data-i18n="esg_title">Green Aerospace Precision Machining</h2>
           <p class="section-subtitle" data-i18n="esg_subtitle">
@@ -676,7 +683,7 @@
           </p>
         </div>
 
-        <div class="esg-grid">
+        <div class=esg-grid reveal-group">
           <div class="esg-card">
             <div class="esg-icon-wrap">💧</div>
             <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-i18n="esg_p1_title">Closed-Loop Coolant Reclamation</h3>
@@ -709,7 +716,7 @@
          ======================================================================== -->
     <section class="leadership-section" id="leadership">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="leaders_badge">FOUNDERS & LEADERSHIP</div>
           <h2 class="section-title" data-i18n="leaders_title">Founded by Aerospace & Precision Engineers</h2>
           <p class="section-subtitle" data-i18n="leaders_subtitle">
@@ -717,7 +724,7 @@
           </p>
         </div>
 
-        <div class="leaders-grid">
+        <div class=leaders-grid reveal-group">
           <!-- Founder 1 -->
           <div class="leader-card">
             <div class="leader-avatar-initials">HK</div>
@@ -766,7 +773,7 @@
          ======================================================================== -->
     <section class="careers-section" id="careers">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill" data-i18n="careers_badge">JOIN OUR TEAM</div>
           <h2 class="section-title" data-i18n="careers_title">Build the Future of Aerospace Machining</h2>
           <p class="section-subtitle" data-i18n="careers_subtitle">
@@ -807,7 +814,7 @@
          ======================================================================== -->
     <section class="rfq-section" id="rfq">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="badge-pill">SECURE RFQ VAULT</div>
           <h2 class="section-title" data-i18n="rfq_modal_title">Defense & Aerospace RFQ Portal</h2>
           <p class="section-subtitle" data-i18n="rfq_modal_sub">
@@ -909,7 +916,7 @@
          ======================================================================== -->
     <section class="contact-section" id="contact">
       <div class="container">
-        <div class="contact-layout">
+        <div class=contact-layout reveal-group">
           <div class="contact-info-card">
             <div class="badge-pill">CONNECT WITH US</div>
             <h2 style="font-size: 2rem; margin-bottom: 14px;">Direct Engineering Contact</h2>

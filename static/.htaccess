@@ -1,0 +1,69 @@
+# =============================================================================
+# Tetra Aeromech — Hostinger Apache .htaccess
+# Optimized for static file serving with security hardening
+# =============================================================================
+
+Options -Indexes -MultiViews +FollowSymLinks
+DirectoryIndex index.html
+
+# ── Security Headers ──────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
+# ── MIME Types ────────────────────────────────────────────────────────────────
+<IfModule mod_mime.c>
+    AddType text/css                    .css
+    AddType application/javascript      .js
+    AddType image/png                   .png
+    AddType image/svg+xml               .svg
+    AddType image/webp                  .webp
+    AddType font/woff2                  .woff2
+</IfModule>
+
+# ── Compression (Gzip) ───────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/plain
+</IfModule>
+
+# ── Browser Caching ───────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html             "access plus 1 hour"
+    ExpiresByType text/css              "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png             "access plus 6 months"
+    ExpiresByType image/svg+xml         "access plus 6 months"
+    ExpiresByType image/webp            "access plus 6 months"
+</IfModule>
+
+# ── Redirect HTTP → HTTPS ─────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Serve index.html for any path (SPA-style fallback)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ /tetra-aeromech/index.html [L]
+</IfModule>
+
+# ── Block Hidden Files ────────────────────────────────────────────────────────
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── Block Python/DB files (not needed when static) ───────────────────────────
+<FilesMatch "\.(py|pyc|pyo|db|sqlite|sh|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

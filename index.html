@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetra Aeromech | Sub-Micron Precision CNC & VMC Manufacturing</title>
+  <meta name="description" content="Precision Engineering & 5-Axis CNC/VMC Machining for Aerospace, Defense, Automotive & Industrial Applications. AS9100D aligned, AS9102 FAIR compliant, manufacturing from Bangalore, India.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Page scroll progress bar -->
+  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ========================================================================
+       APPLE-STYLE FROSTED HEADER & MEGA DROPDOWN NAVIGATION
+       ======================================================================== -->
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <!-- Prominent Brand Logo -->
+      <a href="#" class="nav-brand" aria-label="Tetra Aeromech Home">
+        <img src="/images/logo.png" alt="Tetra Aeromech" class="brand-logo-img">
+      </a>
+
+      <!-- Apple-Style Nav Menu with Mega Dropdowns -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <!-- 1. Capabilities -->
+          <li class="nav-item">
+            <button class="nav-link-btn" aria-haspopup="true">
+              <span data-i18n="nav_capabilities">Capabilities</span>
+              <span class="chevron-icon">▼</span>
+            </button>
+            <div class="mega-dropdown">
+              <div class="mega-grid-2">
+                <a href="#capabilities" class="mega-link" onclick="window.switchTab('vmc')">
+                  <div class="mega-icon">⚙️</div>
+                  <div>
+                    <div class="mega-title" data-i18n="cap_card1_title">5-Axis Simultaneous VMC</div>
+                    <div class="mega-desc">Turbine blisks, impellers & structural bulkheads.</div>
+                  </div>
+                </a>
+                <a href="#capabilities" class="mega-link" onclick="window.switchTab('turning')">
+                  <div class="mega-icon">🔄</div>
+                  <div>
+                    <div class="mega-title" data-i18n="cap_card2_title">Precision CNC Turn-Mill</div>
+                    <div class="mega-desc">Landing gear shafts & spool sleeves to sub-micron roundness.</div>
+                  </div>
+                </a>
+                <a href="#capabilities" class="mega-link" onclick="window.switchTab('alloys')">
+                  <div class="mega-icon">🛡️</div>
+                  <div>
+                    <div class="mega-title" data-i18n="cap_card3_title">Exotic Superalloys</div>
+                    <div class="mega-desc">Inconel 718, Titanium Ti-6Al-4V, 7075-T651 & 15-5 PH.</div>
+                  </div>
+                </a>
+                <a href="#capabilities" class="mega-link" onclick="window.switchTab('finishing')">
+                  <div class="mega-icon">✨</div>
+                  <div>
+                    <div class="mega-title" data-i18n="cap_card4_title">Deburring & Surface Finishing</div>
+                    <div class="mega-desc">Micro-bead blasting, passivation AMS 2700 & hard anodizing.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. Quality & Metrology -->
+          <li class="nav-item">
+            <button class="nav-link-btn" aria-haspopup="true">
+              <span data-i18n="nav_metrology">Quality & Metrology</span>
+              <span class="chevron-icon">▼</span>
+            </button>
+            <div class="mega-dropdown">
+              <div class="mega-grid-2">
+                <a href="#metrology" class="mega-link">
+                  <div class="mega-icon">📐</div>
+                  <div>
+                    <div class="mega-title">Zeiss CNC CMM Inspection</div>
+                    <div class="mega-desc">Continuous scanning contact probe verification.</div>
+                  </div>
+                </a>
+                <a href="#metrology" class="mega-link">
+                  <div class="mega-icon">📋</div>
+                  <div>
+                    <div class="mega-title">AS9102 FAIR Documentation</div>
+                    <div class="mega-desc">First Article Inspection Reports (Forms 1, 2, and 3).</div>
+                  </div>
+                </a>
+                <a href="#metrology" class="mega-link">
+                  <div class="mega-icon">🏆</div>
+                  <div>
+                    <div class="mega-title">AS9100D & ISO 9001:2015</div>
+                    <div class="mega-desc">Certified aerospace quality management framework.</div>
+                  </div>
+                </a>
+                <a href="#metrology" class="mega-link">
+                  <div class="mega-icon">🔬</div>
+                  <div>
+                    <div class="mega-title">EN 10204 3.1 & 3.2 Traceability</div>
+                    <div class="mega-desc">Complete chemical, physical & NDT pedigree.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. Components -->
+          <li class="nav-item">
+            <button class="nav-link-btn" aria-haspopup="true">
+              <span data-i18n="nav_components">Components</span>
+              <span class="chevron-icon">▼</span>
+            </button>
+            <div class="mega-dropdown">
+              <div class="mega-grid-2">
+                <a href="#components" class="mega-link" onclick="window.filterComponents('aerospace')">
+                  <div class="mega-icon">🚀</div>
+                  <div>
+                    <div class="mega-title" data-i18n="filter_aerospace">Aerospace & Space</div>
+                    <div class="mega-desc">High-pressure turbine blisks & cold-gas thruster housings.</div>
+                  </div>
+                </a>
+                <a href="#components" class="mega-link" onclick="window.filterComponents('defense')">
+                  <div class="mega-icon">🛡️</div>
+                  <div>
+                    <div class="mega-title" data-i18n="filter_defense">Defense Aviation</div>
+                    <div class="mega-desc">Hydraulic manifolds, actuator brackets & landing gear pins.</div>
+                  </div>
+                </a>
+                <a href="#components" class="mega-link" onclick="window.filterComponents('automotive')">
+                  <div class="mega-icon">🏎️</div>
+                  <div>
+                    <div class="mega-title" data-i18n="filter_automotive">Automotive & EV</div>
+                    <div class="mega-desc">High-precision transmission pinions & motor shafts.</div>
+                  </div>
+                </a>
+                <a href="#components" class="mega-link" onclick="window.filterComponents('industrial')">
+                  <div class="mega-icon">🏭</div>
+                  <div>
+                    <div class="mega-title" data-i18n="filter_industrial">High-Tech Industrial</div>
+                    <div class="mega-desc">Subsea high-pressure valves & micro-lapped spools.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 4. Supply Chain & ESG -->
+          <li class="nav-item">
+            <button class="nav-link-btn" aria-haspopup="true">
+              <span data-i18n="nav_supply_chain">Supply Chain & ESG</span>
+              <span class="chevron-icon">▼</span>
+            </button>
+            <div class="mega-dropdown">
+              <div class="mega-grid-2">
+                <a href="#supply-chain" class="mega-link">
+                  <div class="mega-icon">📊</div>
+                  <div>
+                    <div class="mega-title">Lean 7S Architecture</div>
+                    <div class="mega-desc">Sort, Set in Order, Shine, Standardize, Sustain, Safety, Spirit.</div>
+                  </div>
+                </a>
+                <a href="#supply-chain" class="mega-link">
+                  <div class="mega-icon">🔄</div>
+                  <div>
+                    <div class="mega-title">Kanban Visual Pull System</div>
+                    <div class="mega-desc">ERP-driven replenishment with >99.4% on-time delivery.</div>
+                  </div>
+                </a>
+                <a href="#sustainability" class="mega-link">
+                  <div class="mega-icon">💧</div>
+                  <div>
+                    <div class="mega-title">Closed-Loop Coolant ESG</div>
+                    <div class="mega-desc">>98% cutting fluid recovery & zero wastewater discharge.</div>
+                  </div>
+                </a>
+                <a href="#sustainability" class="mega-link">
+                  <div class="mega-icon">♻️</div>
+                  <div>
+                    <div class="mega-title">100% Swarf Briquetting</div>
+                    <div class="mega-desc">Direct metallurgical recycling for aerospace titanium/alloys.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5. Company -->
+          <li class="nav-item">
+            <button class="nav-link-btn" aria-haspopup="true">
+              <span data-i18n="nav_leadership">Company</span>
+              <span class="chevron-icon">▼</span>
+            </button>
+            <div class="mega-dropdown">
+              <div class="mega-grid-2">
+                <a href="#leadership" class="mega-link">
+                  <div class="mega-icon">👥</div>
+                  <div>
+                    <div class="mega-title">Founders & Leadership</div>
+                    <div class="mega-desc">Meet Hemanth, Yeshwanth, Divakar & Rakesh.</div>
+                  </div>
+                </a>
+                <a href="#careers" class="mega-link">
+                  <div class="mega-icon">💼</div>
+                  <div>
+                    <div class="mega-title" data-i18n="nav_careers">Careers Portal</div>
+                    <div class="mega-desc">Join our precision engineering team in Bangalore.</div>
+                  </div>
+                </a>
+                <a href="#contact" class="mega-link">
+                  <div class="mega-icon">📍</div>
+                  <div>
+                    <div class="mega-title" data-i18n="nav_contact">Contact Facility</div>
+                    <div class="mega-desc">Global vendor desk, phone helpline & plant address.</div>
+                  </div>
+                </a>
+                <a href="javascript:void(0)" class="mega-link" onclick="window.openChat()">
+                  <div class="mega-icon">🤖</div>
+                  <div>
+                    <div class="mega-title">Tetra AI Concierge</div>
+                    <div class="mega-desc">Instant answers on tolerances, materials & RFQs.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons & Language Switcher -->
+      <div class="nav-actions">
+        <!-- Language Dropdown -->
+        <div class="lang-dropdown">
+          <button class="lang-btn" id="langDropdownBtn" aria-label="Select Language">
+            🌐 <span id="currentLangLabel">EN</span> ▾
+          </button>
+          <div class="lang-menu" id="langDropdownMenu">
+            <button class="lang-option active" data-lang="en">🇬🇧 English</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+          </div>
+        </div>
+
+        <a href="#rfq" class="btn btn-sm btn-primary" data-i18n="nav_rfq_btn">Request Quote (RFQ)</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#capabilities" class="mobile-link" data-i18n="nav_capabilities">Capabilities</a>
+    <a href="#metrology" class="mobile-link" data-i18n="nav_metrology">Quality & Metrology</a>
+    <a href="#components" class="mobile-link" data-i18n="nav_components">Components</a>
+    <a href="#supply-chain" class="mobile-link" data-i18n="nav_supply_chain">Supply Chain & 7S</a>
+    <a href="#sustainability" class="mobile-link" data-i18n="nav_sustainability">Sustainability</a>
+    <a href="#leadership" class="mobile-link" data-i18n="nav_leadership">Leadership</a>
+    <a href="#careers" class="mobile-link" data-i18n="nav_careers">Careers</a>
+    <a href="#contact" class="mobile-link" data-i18n="nav_contact">Contact</a>
+    <a href="#rfq" class="btn btn-primary" data-i18n="nav_rfq_btn">Request Quote (RFQ)</a>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         HERO SECTION (CLEAN SPACIOUS APPLE/SAP BANNER)
+         ======================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-inner">
+        <div class="badge-pill hero-animate" data-i18n="hero_badge">
+          AS9100D & ISO 9001:2015 ALIGNED PRECISION MANUFACTURING
+        </div>
+        
+        <h1 class="hero-headline hero-animate">
+          Sub-Micron Precision CNC & VMC Manufacturing<br>
+          <span class="text-blue">for Global Aerospace, Defense & Industrial Applications</span>
+        </h1>
+
+        <p class="hero-desc hero-animate" data-i18n="hero_desc">
+          Specialized in 5-axis simultaneous machining of mission-critical, close-tolerance components manufactured to customer drawings, 3D CAD models, GD&T requirements, and aerospace material specifications. Manufactured with pride from India.
+        </p>
+
+        <div class="hero-cta-row hero-animate">
+          <a href="#rfq" class="btn btn-primary" data-i18n="hero_cta_rfq">Launch Interactive RFQ</a>
+          <a href="#capabilities" class="btn btn-secondary">Explore Capabilities Matrix</a>
+        </div>
+
+        <!-- Telemetry Metrics Row -->
+        <div class="metrics-row reveal-group hero-animate">
+          <div class="metric-card">
+            <div class="metric-val" data-i18n="stat_tolerance_val">±0.002 mm</div>
+            <div class="metric-lbl" data-i18n="stat_tolerance_lbl">Tightest Machining Tolerance</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val" data-i18n="stat_cpk_val">Cpk ≥ 1.67</div>
+            <div class="metric-lbl" data-i18n="stat_cpk_lbl">Six Sigma Quality Capability</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val" data-i18n="stat_trace_val">100%</div>
+            <div class="metric-lbl" data-i18n="stat_trace_lbl">Material & Heat-Lot Traceability</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val" data-i18n="stat_otd_val">99.4%</div>
+            <div class="metric-lbl" data-i18n="stat_otd_lbl">On-Time Kanban Delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CAPABILITIES ARCHITECTURE (TABBED SEGMENTED CONTROL)
+         ======================================================================== -->
+    <section class="capabilities-section" id="capabilities">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="cap_section_badge">MANUFACTURING ARSENAL</div>
+          <h2 class="section-title" data-i18n="cap_title">End-to-End Precision Engineering Capabilities</h2>
+          <p class="section-subtitle" data-i18n="cap_subtitle">
+            Equipped with state-of-the-art 5-Axis VMC machining centers, high-speed multi-axis turn-mill cells, and automated post-processing.
+          </p>
+        </div>
+
+        <!-- Apple-Style Tab Picker -->
+        <div class="tab-picker">
+          <button class="tab-btn active" data-tab="vmc">5-Axis Simultaneous VMC</button>
+          <button class="tab-btn" data-tab="turning">Precision CNC Turn-Mill</button>
+          <button class="tab-btn" data-tab="alloys">Superalloys & Exotic Metals</button>
+          <button class="tab-btn" data-tab="finishing">Deburring & Surface Finishing</button>
+        </div>
+
+        <!-- Tab 1: 5-Axis VMC -->
+        <div class="tab-content active" id="tab-vmc">
+          <div class=capability-feature-grid reveal-group">
+            <div>
+              <h3 class="cap-detail-title">Simultaneous 5-Axis Machining Centers</h3>
+              <p class="cap-detail-text">
+                Our simultaneous 5-axis vertical machining centers (VMC) provide the structural dynamic rigidity required to machine complex contours, multi-bladed blisks, turbine impellers, and monolithic aerospace structural bulkheads in single setups—eliminating multiple setups and tolerance stack-up errors.
+              </p>
+              <ul class="spec-list">
+                <li class="spec-item"><span class="spec-bullet"></span><span>High-Speed Spindles up to 20,000 RPM with Direct Drive</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Work Envelope up to 1000 mm × 800 mm × 600 mm</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Linear Glass Scales with 0.0001 mm Resolution</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Laser Tool Measurement & Automated In-Process Probing (Renishaw)</span></li>
+              </ul>
+            </div>
+            <div class="cap-spec-table">
+              <h4 style="margin-bottom: 16px; font-size: 1.05rem;">Machining Cell Telemetry</h4>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Positioning Accuracy</span>
+                <span class="cap-spec-val font-mono text-blue">±0.0025 mm</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Repeatability</span>
+                <span class="cap-spec-val font-mono">±0.0015 mm</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Rotary Axes Resolution</span>
+                <span class="cap-spec-val font-mono">0.0001° (A/C Axes)</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Primary Applications</span>
+                <span class="cap-spec-val">Blisks, Impellers, Bulkheads</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Turn-Mill -->
+        <div class="tab-content" id="tab-turning">
+          <div class=capability-feature-grid reveal-group">
+            <div>
+              <h3 class="cap-detail-title">High-Precision Multi-Axis CNC Turning & Turn-Mill</h3>
+              <p class="cap-detail-text">
+                Multi-spindle, multi-turret CNC turning centers equipped with driven live tooling, C-axis and Y-axis capability. Designed for cylindrical parts requiring sub-micron roundness, concentricity, and fine thread tolerances.
+              </p>
+              <ul class="spec-list">
+                <li class="spec-item"><span class="spec-bullet"></span><span>Twin Spindle & Dual Turret with Synchronized Part Transfer</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Bar Capacity up to Ø65 mm; Chucking Capacity up to Ø320 mm</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Deep-Hole Gun Drilling & Reaming down to 1 µm diametral control</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Live Tooling up to 12,000 RPM for Milling, Tapping & Cross-Drilling</span></li>
+              </ul>
+            </div>
+            <div class="cap-spec-table">
+              <h4 style="margin-bottom: 16px; font-size: 1.05rem;">Turning Specifications</h4>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Roundness / Circularity</span>
+                <span class="cap-spec-val font-mono text-blue">0.0015 mm</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Cylindricity Control</span>
+                <span class="cap-spec-val font-mono">0.0020 mm</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Surface Finish (Turned)</span>
+                <span class="cap-spec-val font-mono">Ra 0.2 µm</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Primary Applications</span>
+                <span class="cap-spec-val">Shafts, Trunnions, Spools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Superalloys -->
+        <div class="tab-content" id="tab-alloys">
+          <div class=capability-feature-grid reveal-group">
+            <div>
+              <h3 class="cap-detail-title">Advanced Aerospace Alloys & Superalloys</h3>
+              <p class="cap-detail-text">
+                High-temperature superalloys and refractory metals demand specialized cutting tool geometries, rigid clamping, high-pressure through-spindle coolant (70 bar), and precise feed-rate regulation. We machine certified raw billets directly from approved mill sources.
+              </p>
+              <ul class="spec-list">
+                <li class="spec-item"><span class="spec-bullet"></span><span><strong>Nickel Superalloys:</strong> Inconel 718 (AMS 5662), Inconel 625, Hastelloy X, Nimonic 90</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span><strong>Titanium Alloys:</strong> Ti-6Al-4V Grade 5 (AMS 4928), Grade 23 (ELI), Beta-C</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span><strong>Aerospace Aluminum:</strong> 7075-T651, 2024-T351, 6061-T6, Al-Li</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span><strong>Precipitation Hardening Steels:</strong> 15-5 PH (AMS 5659), 17-4 PH, Maraging 300</span></li>
+              </ul>
+            </div>
+            <div class="cap-spec-table">
+              <h4 style="margin-bottom: 16px; font-size: 1.05rem;">Material Certification Standards</h4>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Mill Test Reports</span>
+                <span class="cap-spec-val">EN 10204 3.1 & 3.2</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Heat Treatment Pedigree</span>
+                <span class="cap-spec-val">AMS 2750 Pyrometry</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Raw Material Sources</span>
+                <span class="cap-spec-val">DFARS & RoHS Compliant</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Batch Traceability</span>
+                <span class="cap-spec-val font-mono text-blue">100% Heat-Lot Barcode</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Finishing -->
+        <div class="tab-content" id="tab-finishing">
+          <div class=capability-feature-grid reveal-group">
+            <div>
+              <h3 class="cap-detail-title">Deburring, Surface Finishing & Special Processes</h3>
+              <p class="cap-detail-text">
+                Post-machining edge radiusing, micro-deburring under microscope inspection, chemical passivation, and special coatings ensure components meet strict aerospace fatigue life and corrosion resistance requirements.
+              </p>
+              <ul class="spec-list">
+                <li class="spec-item"><span class="spec-bullet"></span><span>Micro-Bead Blasting & Controlled Glass Bead Peening</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Ultrasonic Multi-Stage Solvent Degreasing & Cleanroom Packaging</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>Chemical Passivation per AMS 2700 / ASTM A967 (Citric & Nitric)</span></li>
+                <li class="spec-item"><span class="spec-bullet"></span><span>MIL-A-8625 Type III Hard Anodizing & Chemical Film (MIL-DTL-5541)</span></li>
+              </ul>
+            </div>
+            <div class="cap-spec-table">
+              <h4 style="margin-bottom: 16px; font-size: 1.05rem;">Process Standards</h4>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Cleanliness Level</span>
+                <span class="cap-spec-val">ISO Class 7 Cleanroom</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Passivation Standard</span>
+                <span class="cap-spec-val">AMS 2700 Method 1/2</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">Hard Anodizing</span>
+                <span class="cap-spec-val">MIL-A-8625 Type III Class 1/2</span>
+              </div>
+              <div class="cap-spec-row">
+                <span class="cap-spec-label">NDT Inspection</span>
+                <span class="cap-spec-val text-blue font-mono">FPI & MPI Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         METROLOGY & DEFENSE QUALITY ASSURANCE LAB
+         ======================================================================== -->
+    <section class="metrology-section" id="metrology">
+      <div class="container">
+        <div class=metrology-grid reveal-group">
+          <div>
+            <div class="badge-pill" data-i18n="metro_badge">METROLOGY & DEFENSE COMPLIANCE</div>
+            <h2 class="section-title" data-i18n="metro_title">Zero-Defect Quality Assurance & AS9102 FAIR</h2>
+            <p class="section-subtitle" data-i18n="metro_subtitle" style="margin-bottom: 24px;">
+              Every component undergoes strict in-process telemetry and final coordinate measuring machine verification.
+            </p>
+            <ul class="spec-list" style="margin-bottom: 30px;">
+              <li class="spec-item">
+                <span class="spec-bullet"></span>
+                <span data-i18n="metro_point1">Zeiss CNC Coordinate Measuring Machine (CMM) with continuous scanning contact probes.</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet"></span>
+                <span data-i18n="metro_point2">Complete AS9102 First Article Inspection Reports (FAIR Forms 1, 2, and 3).</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet"></span>
+                <span data-i18n="metro_point3">Full EN 10204 3.1 & 3.2 Mill Test Certificates with chemical & physical batch pedigree.</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet"></span>
+                <span data-i18n="metro_point4">Non-Destructive Testing (NDT): Fluorescent Penetrant (FPI) and Magnetic Particle (MPI) testing.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="metrology-card">
+            <h3 style="margin-bottom: 16px; font-size: 1.2rem;">Live Metrology Inspection Telemetry</h3>
+            <div class="telemetry-live-box">
+              <div class="telemetry-row">
+                <span>CMM SYSTEM:</span>
+                <span class="font-mono text-blue">ZEISS CONTURA SCANNING</span>
+              </div>
+              <div class="telemetry-row">
+                <span>VOLUMETRIC UNCERTAINTY:</span>
+                <span class="font-mono text-blue">E₀ = 1.5 + L/350 µm</span>
+              </div>
+              <div class="telemetry-row">
+                <span>PROBING METHOD:</span>
+                <span>VAST XXT CONTINUOUS CONTACT</span>
+              </div>
+              <div class="telemetry-row">
+                <span>ENVIRONMENT:</span>
+                <span>20°C ± 0.5°C TEMPERATURE CONTROLLED</span>
+              </div>
+              <div class="telemetry-row">
+                <span>CAPABILITY INDEX:</span>
+                <span style="color: #107E3E; font-weight: 700;">Cpk = 1.78 (PASSED 6-SIGMA)</span>
+              </div>
+            </div>
+
+            <div class="compliance-badge-row">
+              <span class="comp-badge-pill">AS9100 Rev D</span>
+              <span class="comp-badge-pill">ISO 9001:2015</span>
+              <span class="comp-badge-pill">AS9102 FAIR</span>
+              <span class="comp-badge-pill">ASME Y14.5 GD&T</span>
+              <span class="comp-badge-pill">ITAR Secure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         COMPONENTS SHOWCASE & GALLERY
+         ======================================================================== -->
+    <section class="components-section" id="components">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="gallery_badge">MANUFACTURED COMPONENTS</div>
+          <h2 class="section-title" data-i18n="gallery_title">Precision Component Gallery</h2>
+          <p class="section-subtitle" data-i18n="gallery_subtitle">
+            Explore mission-critical components manufactured for global aerospace, defense, and industrial applications.
+          </p>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Sectors</button>
+          <button class="filter-btn" data-filter="aerospace" data-i18n="filter_aerospace">Aerospace & Space</button>
+          <button class="filter-btn" data-filter="defense" data-i18n="filter_defense">Defense Aviation</button>
+          <button class="filter-btn" data-filter="automotive" data-i18n="filter_automotive">Automotive & EV</button>
+          <button class="filter-btn" data-filter="industrial" data-i18n="filter_industrial">High-Tech Industrial</button>
+        </div>
+
+        <div class="components-grid" id="componentsGrid">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SUPPLY CHAIN, LEAN 7S & KANBAN PULL LOGISTICS
+         ======================================================================== -->
+    <section class="supply-section" id="supply-chain">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="supply_badge">OPERATIONAL EXCELLENCE</div>
+          <h2 class="section-title" data-i18n="supply_title">Lean 7S & Kanban Supply Chain Integration</h2>
+          <p class="section-subtitle" data-i18n="supply_subtitle">
+            Built for seamless integration into global aerospace prime supplier tiers with resilient just-in-time logistics.
+          </p>
+        </div>
+
+        <div class="supply-grid">
+          <!-- Kanban Box -->
+          <div class="supply-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 12px;" data-i18n="supply_kanban_title">Kanban Visual Pull Logistics</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px;" data-i18n="supply_kanban_desc">
+              Automated electronic Kanban replenishment and buffer stock management for zero downtime, fast-tracked spare replenishment, and on-demand production scaling.
+            </p>
+
+            <div class="kanban-flow-box">
+              <div>
+                <div class="kanban-step-title">Customer ERP</div>
+                <div class="kanban-step-sub">Signal Trigger</div>
+              </div>
+              <span class="kanban-arrow">➔</span>
+              <div>
+                <div class="kanban-step-title">Raw Stock Pull</div>
+                <div class="kanban-step-sub">3.1 Certified Billet</div>
+              </div>
+              <span class="kanban-arrow">➔</span>
+              <div>
+                <div class="kanban-step-title">5-Axis Cell</div>
+                <div class="kanban-step-sub">Automated Machining</div>
+              </div>
+              <span class="kanban-arrow">➔</span>
+              <div>
+                <div class="kanban-step-title">CMM & JIT</div>
+                <div class="kanban-step-sub">Direct to Dock</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7S Discipline Matrix -->
+          <div class="supply-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 12px;" data-i18n="supply_7s_title">7S Workplace Discipline</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;" data-i18n="supply_7s_desc">
+              Institutionalized Sort (Seiri), Set in order (Seiton), Shine (Seiso), Standardize (Seiketsu), Sustain (Shitsuke), Safety (Anzen), and Spirit (Shiki) across every square meter.
+            </p>
+
+            <div class="matrix-7s">
+              <div class="pill-7s">
+                <span class="pill-7s-jp">整理 (Seiri)</span>
+                <span class="pill-7s-en">Sort</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">整頓 (Seiton)</span>
+                <span class="pill-7s-en">Set In Order</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">清掃 (Seiso)</span>
+                <span class="pill-7s-en">Shine & Inspect</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">清潔 (Seiketsu)</span>
+                <span class="pill-7s-en">Standardize</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">躾 (Shitsuke)</span>
+                <span class="pill-7s-en">Sustain</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">安全 (Anzen)</span>
+                <span class="pill-7s-en">Safety First</span>
+              </div>
+              <div class="pill-7s">
+                <span class="pill-7s-jp">志気 (Shiki)</span>
+                <span class="pill-7s-en">Team Spirit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SUSTAINABILITY & ESG COMMITMENT
+         ======================================================================== -->
+    <section class="sustainability-section" id="sustainability">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="esg_badge">SUSTAINABILITY & ESG</div>
+          <h2 class="section-title" data-i18n="esg_title">Green Aerospace Precision Machining</h2>
+          <p class="section-subtitle" data-i18n="esg_subtitle">
+            Protecting our planet while shaping the future of flight.
+          </p>
+        </div>
+
+        <div class=esg-grid reveal-group">
+          <div class="esg-card">
+            <div class="esg-icon-wrap">💧</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-i18n="esg_p1_title">Closed-Loop Coolant Reclamation</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;" data-i18n="esg_p1_desc">
+              Advanced centrifuge and bio-stable micro-filtration systems recover over 98% of machine cutting fluid, eliminating hazardous wastewater discharge.
+            </p>
+          </div>
+
+          <div class="esg-card">
+            <div class="esg-icon-wrap">♻️</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-i18n="esg_p2_title">100% Metal Swarf Briquetting</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;" data-i18n="esg_p2_desc">
+              All titanium, superalloy, and aluminum chips are degreased, hydraulically compressed into dense briquettes, and routed directly for closed-loop aerospace smelting.
+            </p>
+          </div>
+
+          <div class="esg-card">
+            <div class="esg-icon-wrap">☀️</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-i18n="esg_p3_title">Solar-Assisted Power Infrastructure</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;" data-i18n="esg_p3_desc">
+              Rooftop photovoltaic arrays offset our grid power consumption, driving clean energy across our CNC production cells.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         LEADERSHIP & 4 CO-FOUNDERS
+         ======================================================================== -->
+    <section class="leadership-section" id="leadership">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="leaders_badge">FOUNDERS & LEADERSHIP</div>
+          <h2 class="section-title" data-i18n="leaders_title">Founded by Aerospace & Precision Engineers</h2>
+          <p class="section-subtitle" data-i18n="leaders_subtitle">
+            Four dedicated engineering visionaries driving world-class precision manufacturing from India to the global stage.
+          </p>
+        </div>
+
+        <div class=leaders-grid reveal-group">
+          <!-- Founder 1 -->
+          <div class="leader-card">
+            <div class="leader-avatar-initials">HK</div>
+            <h3 class="leader-name" data-i18n="leader1_name">Hemanth Kumar Ramesh</h3>
+            <span class="leader-role" data-i18n="leader1_role">Co-Founder & Managing Director</span>
+            <p class="leader-bio" data-i18n="leader1_bio">
+              Spearheading operational strategy, capital equipment deployment, and enterprise growth. Champion of precision manufacturing and global aerospace vendor partnerships.
+            </p>
+          </div>
+
+          <!-- Founder 2 -->
+          <div class="leader-card">
+            <div class="leader-avatar-initials">YP</div>
+            <h3 class="leader-name" data-i18n="leader2_name">Yeshwanth Parameshwara</h3>
+            <span class="leader-role" data-i18n="leader2_role">Co-Founder & Technical Director</span>
+            <p class="leader-bio" data-i18n="leader2_bio">
+              Master of multi-axis CNC/VMC machining, 5-axis CAM programming, high-feed tooling dynamics, and machining cycle optimization for complex superalloys.
+            </p>
+          </div>
+
+          <!-- Founder 3 -->
+          <div class="leader-card">
+            <div class="leader-avatar-initials">DR</div>
+            <h3 class="leader-name" data-i18n="leader3_name">Divakar Ramakrishna</h3>
+            <span class="leader-role" data-i18n="leader3_role">Co-Founder & Director of Quality Assurance</span>
+            <p class="leader-bio" data-i18n="leader3_bio">
+              Directing AS9100D certification, Zeiss CMM metrology protocols, GD&T verification, AS9102 FAIR compliance, and defense-grade non-destructive testing.
+            </p>
+          </div>
+
+          <!-- Founder 4 -->
+          <div class="leader-card">
+            <div class="leader-avatar-initials">RM</div>
+            <h3 class="leader-name" data-i18n="leader4_name">Rakesh Manju</h3>
+            <span class="leader-role" data-i18n="leader4_role">Co-Founder & Director of Supply Chain</span>
+            <p class="leader-bio" data-i18n="leader4_bio">
+              Architect of our Kanban pull systems, Lean 7S implementation, JIT vendor management, international customs logistics, and raw material procurement networks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CAREERS PORTAL
+         ======================================================================== -->
+    <section class="careers-section" id="careers">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill" data-i18n="careers_badge">JOIN OUR TEAM</div>
+          <h2 class="section-title" data-i18n="careers_title">Build the Future of Aerospace Machining</h2>
+          <p class="section-subtitle" data-i18n="careers_subtitle">
+            We are always seeking passionate CNC machinists, CAM engineers, and metrology specialists.
+          </p>
+        </div>
+
+        <div class="careers-list">
+          <div class="career-card">
+            <div>
+              <h3 class="career-title" data-i18n="career1_title">5-Axis CNC Programmer & CAM Specialist</h3>
+              <span class="career-meta" data-i18n="career1_meta">Full-Time • Bangalore Facility • 3+ Years Exp</span>
+            </div>
+            <button class="btn btn-sm btn-outline" onclick="window.openCareerModal('5-Axis CNC Programmer & CAM Specialist')" data-i18n="career_apply_btn">Apply For Position</button>
+          </div>
+
+          <div class="career-card">
+            <div>
+              <h3 class="career-title" data-i18n="career2_title">Senior Metrology & CMM Inspection Engineer</h3>
+              <span class="career-meta" data-i18n="career2_meta">Full-Time • Bangalore Facility • 4+ Years Exp</span>
+            </div>
+            <button class="btn btn-sm btn-outline" onclick="window.openCareerModal('Senior Metrology & CMM Inspection Engineer')" data-i18n="career_apply_btn">Apply For Position</button>
+          </div>
+
+          <div class="career-card">
+            <div>
+              <h3 class="career-title" data-i18n="career3_title">Lean Supply Chain & Kanban Coordinator</h3>
+              <span class="career-meta" data-i18n="career3_meta">Full-Time • Bangalore Facility • 2+ Years Exp</span>
+            </div>
+            <button class="btn btn-sm btn-outline" onclick="window.openCareerModal('Lean Supply Chain & Kanban Coordinator')" data-i18n="career_apply_btn">Apply For Position</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         DEFENSE & AEROSPACE RFQ BUILDER
+         ======================================================================== -->
+    <section class="rfq-section" id="rfq">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge-pill">SECURE RFQ VAULT</div>
+          <h2 class="section-title" data-i18n="rfq_modal_title">Defense & Aerospace RFQ Portal</h2>
+          <p class="section-subtitle" data-i18n="rfq_modal_sub">
+            Submit your 2D/3D engineering drawings with confidence. Encrypted and protected under Mutual NDA & ITAR compliance protocols.
+          </p>
+        </div>
+
+        <div id="rfqSuccessContainer"></div>
+
+        <div class="rfq-card">
+          <form id="rfqForm" enctype="multipart/form-data">
+            <div class="rfq-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="rfqName" data-i18n="rfq_lbl_name">Full Name *</label>
+                <input type="text" id="rfqName" name="name" class="form-control" required placeholder="Dr. John Doe">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="rfqCompany" data-i18n="rfq_lbl_company">Company / Organization *</label>
+                <input type="text" id="rfqCompany" name="company" class="form-control" required placeholder="Boeing / Airbus / Lockheed Tier-1">
+              </div>
+            </div>
+
+            <div class="rfq-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="rfqEmail" data-i18n="rfq_lbl_email">Corporate Email *</label>
+                <input type="email" id="rfqEmail" name="email" class="form-control" required placeholder="john.doe@aerospace.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="rfqPhone" data-i18n="rfq_lbl_phone">Phone Number</label>
+                <input type="tel" id="rfqPhone" name="phone" class="form-control" placeholder="+1 (555) 019-2834">
+              </div>
+            </div>
+
+            <div class="rfq-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="rfqSector" data-i18n="rfq_lbl_sector">Industry Sector *</label>
+                <select id="rfqSector" name="sector" class="form-control">
+                  <option value="Aerospace Commercial">Aerospace Commercial</option>
+                  <option value="Defense & Space">Defense & Space</option>
+                  <option value="Aviation Flight Controls">Aviation Flight Controls</option>
+                  <option value="High-End Automotive & EV">High-End Automotive & EV</option>
+                  <option value="High-Pressure Hydraulics">High-Pressure Hydraulics</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="rfqMaterial" data-i18n="rfq_lbl_material">Material Specification</label>
+                <input type="text" id="rfqMaterial" name="material" class="form-control" placeholder="Inconel 718 / Titanium Ti-6Al-4V / 7075-T651">
+              </div>
+            </div>
+
+            <div class="rfq-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="rfqTolerance" data-i18n="rfq_lbl_tolerance">Critical Tolerance Required</label>
+                <input type="text" id="rfqTolerance" name="tolerance" class="form-control" placeholder="±0.002 mm to ±0.005 mm">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="rfqVolume" data-i18n="rfq_lbl_volume">Target Volume / Run Size</label>
+                <input type="text" id="rfqVolume" name="volume" class="form-control" placeholder="Prototype (1-10 pcs) or Production (500/mo)">
+              </div>
+            </div>
+
+            <!-- CAD File Drag & Drop Upload -->
+            <div class="form-group">
+              <label class="form-label" data-i18n="rfq_lbl_file">Upload Engineering Drawing (STEP, IGES, DXF, PDF, ZIP)</label>
+              <div class="file-upload-box">
+                <input type="file" id="rfqFile" name="file" class="file-input-hidden" accept=".step,.stp,.iges,.igs,.dxf,.dwg,.pdf,.zip">
+                <div style="font-size: 1.8rem; margin-bottom: 6px;">📁</div>
+                <div><strong>Click to browse or drag & drop CAD / 2D drawing</strong></div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Max file size: 15MB. Encrypted transmission.</div>
+                <div id="rfqFileStatus" style="font-size: 0.85rem; font-weight: 600; color: var(--sap-blue); margin-top: 8px;"></div>
+              </div>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" name="nda" checked>
+              <span class="checkbox-label" data-i18n="rfq_chk_nda">Require Mutual Non-Disclosure Agreement (NDA) before detailed CAD analysis</span>
+            </label>
+
+            <label class="checkbox-row">
+              <input type="checkbox" name="itar">
+              <span class="checkbox-label" data-i18n="rfq_chk_itar">Subject to Defense / ITAR / Export Controls</span>
+            </label>
+
+            <div class="form-group">
+              <label class="form-label" for="rfqNotes" data-i18n="rfq_lbl_notes">Additional Specifications, GD&T, or Surface Treatments</label>
+              <textarea id="rfqNotes" name="notes" class="form-control" placeholder="Specify CMM inspection requirements, AS9102 FAIR, surface coatings, or batch schedule..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="rfq_btn_submit">
+              Submit RFQ For Engineering Review
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT US SECTION
+         ======================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class=contact-layout reveal-group">
+          <div class="contact-info-card">
+            <div class="badge-pill">CONNECT WITH US</div>
+            <h2 style="font-size: 2rem; margin-bottom: 14px;">Direct Engineering Contact</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+              Discuss your technical requirements directly with our founding directors and precision manufacturing specialists.
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <strong>Global Manufacturing Facility:</strong>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 2px;">
+                  Tetra Aeromech Precision Works<br>
+                  Aerospace Corridor, Peenya Industrial Area<br>
+                  Bangalore, Karnataka, India - 560058
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <strong>Engineering & RFQ Inquiries:</strong>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 2px;">
+                  engineering@tetra-aeromech.com<br>
+                  rfq@tetra-aeromech.com
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <strong>Helpline & Vendor Desk:</strong>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 2px;">
+                  +91 (80) 4122-7788 / +91 98450-XXXXX
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <form id="contactForm" class="rfq-card" style="padding: 36px;">
+              <h3 style="margin-bottom: 18px; font-size: 1.3rem;">Send a Direct Message</h3>
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" id="contactName" class="form-control" required placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Corporate Email *</label>
+                <input type="email" id="contactEmail" class="form-control" required placeholder="email@company.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactDept">Target Department</label>
+                <select id="contactDept" class="form-control">
+                  <option value="Technical Operations (Hemanth / Yeshwanth)">Technical Operations (Hemanth / Yeshwanth)</option>
+                  <option value="Quality & Metrology (Divakar Ramakrishna)">Quality & Metrology (Divakar Ramakrishna)</option>
+                  <option value="Supply Chain & Alliances (Rakesh Manju)">Supply Chain & Alliances (Rakesh Manju)</option>
+                  <option value="Careers & HR">Careers & HR</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" class="form-control" placeholder="Subject of inquiry">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactMsg">Message *</label>
+                <textarea id="contactMsg" class="form-control" required placeholder="How can our engineering team assist you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Send Secure Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       ENTERPRISE FOOTER (SAP / APPLE STYLE)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="nav-brand" style="margin-bottom: 16px;">
+            <img src="/images/logo.png" alt="Tetra Aeromech" class="brand-logo-img" style="height: 48px;">
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 320px; line-height: 1.6;">
+            Precision CNC & VMC manufacturing company delivering mission-critical components for global aerospace, defense, and high-tech applications from Bangalore, India.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Capabilities</h4>
+          <ul class="footer-links">
+            <li><a href="#capabilities" onclick="window.switchTab('vmc')">5-Axis Simultaneous VMC</a></li>
+            <li><a href="#capabilities" onclick="window.switchTab('turning')">Multi-Axis Turn-Mill</a></li>
+            <li><a href="#capabilities" onclick="window.switchTab('alloys')">Inconel & Titanium Machining</a></li>
+            <li><a href="#metrology">Zeiss CMM Inspection</a></li>
+            <li><a href="#metrology">AS9102 FAIR Documentation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Supply & Quality</h4>
+          <ul class="footer-links">
+            <li><a href="#supply-chain">Lean 7S Architecture</a></li>
+            <li><a href="#supply-chain">Electronic Kanban Pull</a></li>
+            <li><a href="#supply-chain">Just-In-Time (JIT) Delivery</a></li>
+            <li><a href="#sustainability">Closed-Loop Coolant ESG</a></li>
+            <li><a href="#sustainability">100% Swarf Briquetting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#leadership">Founders & Leadership</a></li>
+            <li><a href="#careers">Careers & Open Roles</a></li>
+            <li><a href="#rfq">Request a Quote (RFQ)</a></li>
+            <li><a href="#contact">Direct Contacts</a></li>
+            <li><a href="javascript:void(0)" onclick="window.openChat()">AI Engineering Concierge</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span data-i18n="footer_rights">© 2026 Tetra Aeromech. All Rights Reserved. Precision Engineering & CNC Manufacturing from India.</span>
+        <span data-i18n="footer_compliance">AS9100D & ISO 9001:2015 Aligned • AS9102 FAIR Compliant • ITAR Confidentiality Protocol Enforced.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       FLOATING AI CHATBOT WIDGET ("TETRABOT")
+       ======================================================================== -->
+  <button class="chat-launcher" id="chatLauncher" aria-label="Open AI Chatbot">
+    <span style="font-size: 1.1rem;">🤖</span>
+    <span>Tetra AI Concierge</span>
+  </button>
+
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <div>
+        <div class="chat-title" data-i18n="chat_header_title">Tetra AI Engineering Concierge</div>
+        <div class="chat-status" data-i18n="chat_header_status">Online • Ready for Technical Inquiries</div>
+      </div>
+      <button class="chat-close-btn" id="chatClose" aria-label="Close Chat">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg chat-msg-bot">
+        <div class="chat-bubble" data-i18n="chat_welcome">
+          Welcome to Tetra Aeromech. I am your engineering assistant. Ask me about our 5-axis tolerances, superalloy machining, AS9100D compliance, or RFQ procedures!
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-chips-area" id="chatChips"></div>
+
+    <div class="chat-input-row">
+      <input type="text" class="chat-input-field" id="chatInput" placeholder="Ask about tolerances, materials, CMM..." data-i18n-ph="chat_input_ph">
+      <button class="btn btn-sm btn-primary" id="chatSend" data-i18n="chat_send">Send</button>
+    </div>
+  </div>
+
+  <!-- COMPONENT GD&T BLUEPRINT INSPECTION MODAL -->
+  <div class="modal-overlay" id="compModal">
+    <div class="modal-card" id="compModalContent"></div>
+  </div>
+
+  <!-- CAREERS APPLICATION MODAL -->
+  <div class="modal-overlay" id="careerModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="badge-pill">TALENT ACQUISITION</span>
+          <h2 style="font-size: 1.4rem; margin-top: 4px;" id="careerRoleTitle">Position Application</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">Bangalore Precision Manufacturing Hub</p>
+        </div>
+        <button class="modal-close" onclick="window.closeCareerModal()">&times;</button>
+      </div>
+      <form id="careerForm" style="margin-top: 16px;">
+        <input type="hidden" id="careerRoleInput">
+        <div class="form-group">
+          <label class="form-label" for="careerName">Full Name *</label>
+          <input type="text" id="careerName" class="form-control" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="careerEmail">Email Address *</label>
+          <input type="email" id="careerEmail" class="form-control" required placeholder="your.email@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="careerPhone">Phone Number *</label>
+          <input type="tel" id="careerPhone" class="form-control" required placeholder="+91 98765-43210">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="careerExp">Years of Relevant Experience *</label>
+          <input type="text" id="careerExp" class="form-control" required placeholder="e.g. 4 Years in 5-Axis CAM / Mastercam / CMM">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="careerNotes">Key Technical Strengths / Machines Operated</label>
+          <textarea id="careerNotes" class="form-control" placeholder="Tell us about the CNC machines, controllers (Fanuc, Siemens, Heidenhain), or CMM tools you have used..."></textarea>
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+          <button type="button" class="btn btn-secondary" onclick="window.closeCareerModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="/js/translations.js"></script>
+  <script src="/js/chatbot.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

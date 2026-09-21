@@ -355,7 +355,11 @@
       animation: slideUp 0.3s ease;
     `;
     toast.innerHTML = `
-      <span>${type === 'success' ? '✓' : '⚠️'}</span>
+      <span style="display:inline-flex; align-items:center; color:${type === 'success' ? '#107E3E' : '#D92D20'};">
+        ${type === 'success' 
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' 
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>'}
+      </span>
       <span>${message}</span>
     `;
 
@@ -432,7 +436,9 @@
 
     container.innerHTML = `
       <div class="rfq-success-card">
-        <div style="width: 52px; height: 52px; background: var(--sap-blue-light); border: 2px solid var(--sap-blue); color: var(--sap-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 16px auto;">✓</div>
+        <div style="width: 52px; height: 52px; background: var(--sap-blue-light); border: 2px solid var(--sap-blue); color: var(--sap-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
         <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Request for Quote Successfully Received</h3>
         <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 16px auto;">
           Your aerospace engineering requirements have been secured in our ITAR/NDA-compliant database.

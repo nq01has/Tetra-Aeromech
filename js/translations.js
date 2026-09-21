@@ -132,9 +132,9 @@ const TRANSLATIONS = {
     rfq_lbl_notes: "Additional Specifications, GD&T, or Surface Treatments",
     rfq_btn_submit: "Submit RFQ For Engineering Review",
 
-    chat_header_title: "Tetra AI Engineering Concierge",
-    chat_header_status: "Online • Ready for Technical Inquiries",
-    chat_welcome: "Welcome to Tetra Aeromech. I am your engineering assistant. Ask me about our 5-axis tolerances, superalloy machining, AS9100D compliance, or RFQ procedures!",
+    chat_header_title: "Tetra Assistant",
+    chat_header_status: "Precision Engineering & Supply Chain Specialist",
+    chat_welcome: "Hello! I am Tetra Assistant, your precision engineering & supply chain specialist. How can I help you today? Feel free to ask me anything about our 5-axis CNC machining, tooling, superalloys, AS9100D / ISO 9001 quality systems, or Kanban logistics.",
     chat_input_ph: "Ask about tolerances, materials, CMM, or RFQ...",
     chat_send: "Send",
 
@@ -269,9 +269,9 @@ const TRANSLATIONS = {
     rfq_lbl_notes: "Zusätzliche Spezifikationen oder Wärmebehandlung",
     rfq_btn_submit: "Angebot Anfordern",
 
-    chat_header_title: "Tetra AI Engineering Concierge",
-    chat_header_status: "Online • Bereit für Technische Anfragen",
-    chat_welcome: "Willkommen bei Tetra Aeromech. Ich bin Ihr technischer Assistent für Fertigungsfragen, Toleranzen und Angebote.",
+    chat_header_title: "Tetra Assistant",
+    chat_header_status: "Spezialistin für Präzisionstechnik & Lieferkette",
+    chat_welcome: "Hallo! Ich bin Tetra Assistant, Ihre Spezialistin für Präzisionsfertigung und Lieferkette bei Tetra Aeromech. Wie kann ich Ihnen heute helfen? Fragen Sie mich gerne nach 5-Achs-CNC-Bearbeitung, Werkzeugen, AS9100D / ISO 9001 Qualitätssystemen oder Kanban-Logistik.",
     chat_input_ph: "Frage zu Toleranzen, Werkstoffen, KMG oder RFQ stellen...",
     chat_send: "Senden",
 
@@ -406,9 +406,9 @@ const TRANSLATIONS = {
     rfq_lbl_notes: "Spécifications Particulières ou Traitements",
     rfq_btn_submit: "Envoyer la Demande de Devis",
 
-    chat_header_title: "Concierge Technique Tetra AI",
-    chat_header_status: "En Ligne • Prêt pour vos Questions d'Ingénierie",
-    chat_welcome: "Bienvenue chez Tetra Aeromech. Je suis votre assistant pour toute question relative aux tolérances et devis.",
+    chat_header_title: "Tetra Assistant",
+    chat_header_status: "Spécialiste en Ingénierie de Précision & Chaîne Logistique",
+    chat_welcome: "Bonjour ! Je suis Tetra Assistant, votre spécialiste en ingénierie aérospatiale et usinage de précision chez Tetra Aeromech. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur l'usinage 5 axes, l'outillage, nos certifications AS9100D / ISO 9001 ou notre chaîne logistique Kanban.",
     chat_input_ph: "Posez votre question sur nos tolérances, matières ou devis...",
     chat_send: "Envoyer",
 
@@ -543,9 +543,9 @@ const TRANSLATIONS = {
     rfq_lbl_notes: "その他ご要望・表面処理仕様",
     rfq_btn_submit: "見積依頼を送信する",
 
-    chat_header_title: "テトラ AI エンジニアリング・コンシェルジュ",
-    chat_header_status: "オンライン • 技術的なご質問に即座にお答えします",
-    chat_welcome: "テトラ・エアロメックへようこそ。公差、難削材加工、AS9100規格、お見積りについてお気軽にお尋ねください。",
+    chat_header_title: "Tetra Assistant (テトラ・アシスタント)",
+    chat_header_status: "精密エンジニアリング＆サプライチェーン専門",
+    chat_welcome: "こんにちは！テトラ・エアロメックの精密加工・サプライチェーン専門AI「Tetra Assistant」です。5軸マシニング、切削工具、超耐熱合金、AS9100D/ISO 9001品質保証、カンバン調達についてお気軽にお尋ねください。",
     chat_input_ph: "公差、材質、三次元測定、納期について質問...",
     chat_send: "送信",
 
@@ -680,9 +680,9 @@ const TRANSLATIONS = {
     rfq_lbl_notes: "Notas o Tratamientos Especiales",
     rfq_btn_submit: "Enviar para Evaluación Técnica",
 
-    chat_header_title: "Asistente Técnico Tetra AI",
-    chat_header_status: "En Línea • Listo para Consultas Técnicas",
-    chat_welcome: "Bienvenido a Tetra Aeromech. Estoy aquí para responder sobre tolerancias, materiales y cotizaciones.",
+    chat_header_title: "Tetra Assistant",
+    chat_header_status: "Especialista en Ingeniería de Precisión y Cadena de Suministro",
+    chat_welcome: "¡Hola! Soy Tetra Assistant, su especialista en ingeniería de precisión y cadena de suministro en Tetra Aeromech. ¿En qué puedo ayudarle hoy? Pregúnteme sobre mecanizado CNC de 5 ejes, herramientas, sistemas de calidad AS9100D / ISO 9001 o logística Kanban.",
     chat_input_ph: "Consulte sobre tolerancias, materiales o RFQ...",
     chat_send: "Enviar",
 

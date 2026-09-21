@@ -147,35 +147,51 @@ function verifyCsrf(?string $token): bool {
 // Chatbot Knowledge Base
 $knowledgeBase = [
     [
-        "keywords" => ["tolerance", "precision", "accuracy", "micron", "close", "gd&t"],
+        "keywords" => ["who are you", "what is your name", "tetra assistant", "introduce", "hello", "hi", "hey", "greetings"],
+        "answer" => "Hello! I am Tetra Assistant, your dedicated aerospace engineering and precision manufacturing specialist at Tetra Aeromech. I can help you with technical details regarding our 5-axis CNC machining, high-performance cutting tools, titanium and superalloy milling, AS9100D and ISO 9001 quality systems, AS9102 FAIR inspections, or our lean Kanban supply chain. How can I assist you with your project today?"
+    ],
+    [
+        "keywords" => ["tool", "tooling", "cutter", "end mill", "insert", "carbide", "pcd", "cbn", "holder", "shrink fit", "presetter", "zoller", "coating", "tialn", "chatter"],
+        "answer" => "We deploy premium cutting tool systems engineered for high-temperature superalloys: solid micro-grain tungsten carbide end mills with nano-composite AlTiN and nACo coatings; PCD (Polycrystalline Diamond) tooling for non-ferrous and composite machining; and CBN (Cubic Boron Nitride) and ceramic indexable inserts for hardened steels (>55 HRC). All tooling is mounted in high-precision induction shrink-fit and hydraulic holders balanced to G2.5 at 25,000 RPM (runout < 0.003 mm), measured on our offline Zoller optical tool presetters with RFID data chips."
+    ],
+    [
+        "keywords" => ["5-axis", "5 axis", "vmc", "cnc machine", "machining center", "spindle", "lathe", "mill-turn", "wire edm", "grinding", "arsenal", "equipment", "capabilities"],
+        "answer" => "Our manufacturing arsenal is built for sub-micron aerospace precision: simultaneous 5-Axis VMC centers (Hermle and DMG Mori class kinematics) with up to 20,000 RPM dynamic balancing spindles and 70-bar through-spindle coolant; multi-axis CNC Turn-Mill centers with live tooling and sub-spindles for single-setup complex turn-milled components; Wire EDM for intricate internal splines and keyways down to 0.1 mm radii; and high-precision CNC cylindrical and surface grinding achieving Ra 0.15 µm finishes."
+    ],
+    [
+        "keywords" => ["iso 9000", "iso 9001", "as9100", "as9100d", "certification", "quality", "standard", "audit", "compliance", "fair", "as9102", "cmm", "zeiss", "spc", "cpk"],
+        "answer" => "Tetra Aeromech enforces a dual AS9100D and ISO 9001:2015 certified Quality Management System. We provide complete AS9102 First Article Inspection Reports (FAIR Form 1: Part Number Accountability, Form 2: Product Accountability for materials & special processes, Form 3: Characteristic Accountability for 100% ballooned drawing dimensions). Inspections are conducted in our Class 10,000 cleanroom (20°C ± 0.5°C) using Zeiss CNC CMMs with sub-micron volumetric uncertainty (E0 <= 0.9 + L/350 µm) and Statistical Process Control (Cpk >= 1.67)."
+    ],
+    [
+        "keywords" => ["tolerance", "precision", "accuracy", "micron", "close", "gd&t", "asme y14.5", "runout", "concentricity", "flatness"],
         "answer" => "At Tetra Aeromech, we achieve machining tolerances down to ±0.002 mm (2 microns) on CNC turning and ±0.005 mm on 5-Axis VMC centers. All components are certified with full GD&T verification in accordance with ASME Y14.5 / ISO 1101 using our Zeiss CNC CMM."
     ],
     [
-        "keywords" => ["material", "titanium", "inconel", "aluminum", "alloy", "raw"],
+        "keywords" => ["supply chain", "kanban", "jit", "vmi", "logistics", "lead time", "delivery", "on-time", "inventory", "packaging", "mil-std", "otd", "7s", "5s", "lean"],
+        "answer" => "We follow Lean 7S (Sort, Set in order, Shine, Standardize, Sustain, Safety, Spirit) and automated Kanban replenishment systems. We support Just-In-Time (JIT) deliveries and Vendor Managed Inventory (VMI) buffer stocks with on-time delivery metrics exceeding 99.4%. Components are preserved with VCI anti-corrosion barrier packaging and custom foam-nested crating compliant with MIL-STD-2073."
+    ],
+    [
+        "keywords" => ["material", "titanium", "inconel", "aluminum", "alloy", "steel", "peek", "raw", "superalloy", "monel", "hastelloy"],
         "answer" => "We specialize in challenging aerospace superalloys and precision metals: Titanium (Ti-6Al-4V Grade 5 & Eli), Inconel 718 / 625, Aerospace Aluminum (7075-T651, 2024-T351, 6061-T6), 15-5 PH / 17-4 PH Stainless Steels, and high-performance engineering polymers (PEEK, Delrin). 100% mill test certificates (EN 10204 3.1 / 3.2) are provided."
     ],
     [
-        "keywords" => ["certification", "as9100", "iso", "quality", "standard", "audit", "compliance"],
-        "answer" => "Tetra Aeromech operates under stringent AS9100D and ISO 9001:2015 aerospace quality standards. Every batch comes with AS9102 First Article Inspection Reports (FAIR Form 1, 2, 3), calibration traceability to NABL/NIST, and complete batch serialization."
+        "keywords" => ["surface finish", "anodiz", "coating", "plating", "heat treatment", "passivat", "alodine", "nadcap", "ndt", "fpi", "mpi"],
+        "answer" => "Through our Nadcap-accredited partner network, we provide end-to-end surface treatments and special processes: MIL-A-8625 Type II and Type III Hardcoat Anodizing; MIL-DTL-5541 Chemical Conversion (Alodine); Electroless Nickel Plating (MIL-DTL-26074); Vacuum Heat Treatment and cryogenic stress relief; Passivation (AMS 2700); and Non-Destructive Testing including Fluorescent Penetrant Inspection (ASTM E1417) and Magnetic Particle Inspection (ASTM E1444)."
     ],
     [
-        "keywords" => ["5-axis", "vmc", "cnc", "machine", "machining", "capabilities", "spindle"],
-        "answer" => "Our manufacturing arsenal includes simultaneous 5-Axis VMC machining centers (up to 20,000 RPM spindle speed for complex contours and blisks), multi-axis CNC turning with live tooling, precision surface grinders, and optical measuring systems."
-    ],
-    [
-        "keywords" => ["kanban", "supply chain", "7s", "5s", "jit", "lean", "delivery"],
-        "answer" => "We follow Lean 7S (Sort, Set in order, Shine, Standardize, Sustain, Safety, Spirit) and automated Kanban replenishment systems. We support Just-In-Time (JIT) deliveries and Vendor Managed Inventory (VMI) with on-time delivery metrics exceeding 99.4%."
-    ],
-    [
-        "keywords" => ["quote", "rfq", "cost", "lead time", "drawing", "pricing"],
+        "keywords" => ["quote", "rfq", "cost", "lead time", "drawing", "pricing", "step", "iges", "dxf", "cad"],
         "answer" => "You can request an engineering quote directly through our online RFQ portal! Simply upload your 2D drawings or 3D CAD files (STEP, IGES, DXF, PDF). Typical RFQ turnaround time is within 24 to 48 hours with full DFM (Design for Manufacturability) analysis."
     ],
     [
-        "keywords" => ["founder", "director", "leadership", "team", "who", "started"],
+        "keywords" => ["founder", "director", "leadership", "team", "who", "started", "hemanth", "yeshwanth", "divakar", "rakesh"],
         "answer" => "Tetra Aeromech was founded by 4 aerospace engineering specialists: Hemanth Kumar Ramesh (Managing Director & Operations), Yeshwanth Parameshwara (Technical Director & CNC Precision), Divakar Ramakrishna (Director of QA & Defense Compliance), and Rakesh Manju (Director of Supply Chain & Global Strategic Alliances)."
     ],
     [
-        "keywords" => ["sustainability", "green", "environment", "esg", "recycling"],
+        "keywords" => ["location", "address", "where", "bangalore", "bengaluru", "peenya", "india", "contact", "phone", "email"],
+        "answer" => "Our precision manufacturing facility is located in Peenya Industrial Area, Phase 1, Bangalore (Bengaluru) 560058, Karnataka, India - Asia's premier aerospace manufacturing corridor. You can reach our engineering desk by phone at +91 98450 12345 / +91 99000 67890 or via email at info@tetra-aeromech.com and rfq@tetra-aeromech.com."
+    ],
+    [
+        "keywords" => ["sustainability", "green", "environment", "esg", "recycling", "swarf"],
         "answer" => "Our sustainability blueprint incorporates closed-loop synthetic coolant filtration (>98% fluid retention), 100% titanium and aluminum swarf briquetting for zero-loss metallurgical re-smelting, solar-assisted power, and strict RoHS/REACH compliance."
     ],
     [
@@ -188,12 +204,19 @@ function generateBotReply(string $prompt, array $kb): string {
     $cleaned = mb_strtolower($prompt, 'UTF-8');
     foreach ($kb as $item) {
         foreach ($item['keywords'] as $kw) {
-            if (mb_strpos($cleaned, $kw) !== false) {
-                return $item['answer'];
+            $kwLower = mb_strtolower($kw, 'UTF-8');
+            if (mb_strlen($kwLower, 'UTF-8') <= 3) {
+                if (preg_match('/\b' . preg_quote($kwLower, '/') . '\b/u', $cleaned)) {
+                    return $item['answer'];
+                }
+            } else {
+                if (mb_strpos($cleaned, $kwLower) !== false) {
+                    return $item['answer'];
+                }
             }
         }
     }
-    return "Thank you for reaching out to Tetra Aeromech Engineering. We specialize in precision CNC/VMC manufacturing for Aerospace, Defense, Automotive, and Industrial applications with sub-micron tolerances (±0.002 mm). You can upload your CAD model or 2D drawing in our RFQ section, or contact our engineering directors directly.";
+    return "Hello! I am Tetra Assistant. We specialize in precision CNC & 5-axis VMC manufacturing for Aerospace, Defense, Automotive, and Industrial applications with sub-micron tolerances (±0.002 mm). I would be glad to assist you with our machine capabilities, cutting tools, AS9100D / ISO 9001 compliance, or Kanban supply chain. Feel free to upload your CAD drawings in our RFQ section or contact our directors directly.";
 }
 
 // Routing

@@ -44,12 +44,14 @@
 
   // Quick Chips
   const promptChips = [
+    "What CNC & VMC machines do you run?",
+    "What cutting tools and holders do you use?",
+    "Explain your AS9100D & ISO 9001 quality system",
+    "How does your Kanban & supply chain work?",
     "What tolerances can you deliver?",
     "Can you machine Inconel 718 and Titanium?",
-    "Do you provide AS9102 FAIR reports?",
-    "Explain your 7S and Kanban system",
     "Who are the 4 co-founders?",
-    "How does the RFQ process work?"
+    "How do I request an engineering quote?"
   ];
 
   function renderChips() {
@@ -146,12 +148,12 @@
         const isActionable = query.toLowerCase().includes("quote") || query.toLowerCase().includes("rfq") || query.toLowerCase().includes("tolerance") || query.toLowerCase().includes("part");
         appendMessage("bot", reply, isActionable);
       } else {
-        appendMessage("bot", "Our engineering server is operating under high security restrictions. You can directly request a quote via our online RFQ portal or email us.", true);
+        appendMessage("bot", "Hello! I am Tetra Assistant. Our engineering server is operating under high security restrictions. You can directly request a quote via our online RFQ portal or contact our technical directors.", true);
       }
     } catch (err) {
       hideTyping();
       // Graceful offline fallback
-      appendMessage("bot", "At Tetra Aeromech, we specialize in precision CNC & 5-axis VMC machining for Aerospace, Defense, and Automotive sectors with sub-micron tolerances (±0.002 mm). Feel free to submit your 3D CAD drawing in our RFQ portal.", true);
+      appendMessage("bot", "Hello! I am Tetra Assistant. We specialize in precision CNC & 5-axis VMC machining for Aerospace, Defense, and Automotive sectors with sub-micron tolerances (±0.002 mm). I would be glad to share details on our cutting tools, AS9100D / ISO 9001 compliance, or Kanban supply chain. Feel free to submit your 3D CAD drawing in our RFQ portal.", true);
     }
   }
 

@@ -73,6 +73,26 @@ class AppleSapTetraAeromechTests(unittest.TestCase):
         self.assertIn("7S", ans_lean)
         self.assertIn("Kanban", ans_lean)
 
+        # 5. Cutting Tools & Holders
+        ans_tools = server.generate_bot_reply("What cutting tools and holders do you use?")
+        self.assertIn("carbide", ans_tools.lower())
+        self.assertIn("shrink-fit", ans_tools.lower())
+
+        # 6. CNC & VMC Machines
+        ans_machines = server.generate_bot_reply("Tell me about your 5-axis VMC and CNC machines")
+        self.assertIn("5-axis", ans_machines.lower())
+        self.assertIn("spindle", ans_machines.lower())
+
+        # 7. ISO 9000 & AS9100D Quality
+        ans_iso = server.generate_bot_reply("What is your ISO 9000 and AS9100 quality compliance?")
+        self.assertIn("as9100d", ans_iso.lower())
+        self.assertIn("iso 9001:2015", ans_iso.lower())
+        self.assertIn("fair", ans_iso.lower())
+
+        # 8. Tetra Assistant Persona Introduction
+        ans_intro = server.generate_bot_reply("Who are you?")
+        self.assertIn("Tetra Assistant", ans_intro)
+
     def test_05_sqlite_database_rfq_workflow(self):
         with sqlite3.connect(server.DB_PATH) as conn:
             cursor = conn.cursor()
@@ -142,6 +162,35 @@ class AppleSapTetraAeromechTests(unittest.TestCase):
         self.assertIn("AS9102", html_content)
         self.assertIn("Kanban", html_content)
         self.assertIn("7S", html_content)
+
+    def test_08_zero_emojis_across_codebase(self):
+        import re, glob
+        emoji_pattern = re.compile(
+            r"[\U0001F600-\U0001F64F]"
+            r"|[\U0001F300-\U0001F5FF]"
+            r"|[\U0001F680-\U0001F6FF]"
+            r"|[\U0001F900-\U0001F9FF]"
+            r"|[\U0001FA00-\U0001FA6F]"
+            r"|[\U0001FA70-\U0001FAFF]"
+            r"|[\U00002600-\U000026FF]"
+            r"|[\U00002700-\U000027BF]"
+        )
+        files = glob.glob("**/*.html", recursive=True) + glob.glob("**/*.js", recursive=True) + glob.glob("**/*.php", recursive=True)
+        for fpath in files:
+            if "node_modules" in fpath or ".git" in fpath:
+                continue
+            with open(fpath, "r", encoding="utf-8") as f:
+                content = f.read()
+            matches = emoji_pattern.findall(content)
+            self.assertEqual(len(matches), 0, f"Found emojis in {fpath}: {matches}")
+
+    def test_09_small_round_chat_launcher(self):
+        css_path = os.path.join(server.STATIC_DIR, "css/styles.css")
+        with open(css_path, "r", encoding="utf-8") as f:
+            css_content = f.read()
+        self.assertIn(".chat-launcher", css_content)
+        self.assertIn("border-radius: 50%", css_content)
+        self.assertIn("Tetra Assistant", css_content)
 
 if __name__ == "__main__":
     unittest.main()

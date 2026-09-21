@@ -1553,18 +1553,17 @@ textarea.form-control {
   position: fixed;
   bottom: 28px;
   right: 28px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
   background-color: var(--sap-blue);
   color: #FFFFFF;
   border: none;
-  border-radius: var(--radius-full);
-  padding: 12px 22px;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: var(--shadow-blue);
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 100, 210, 0.35);
   cursor: pointer;
   z-index: 990;
   transition: all var(--transition-fast);
@@ -1572,7 +1571,37 @@ textarea.form-control {
 
 .chat-launcher:hover {
   background-color: var(--sap-blue-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 22px rgba(0, 100, 210, 0.45);
+}
+
+@media (min-width: 769px) {
+  .chat-launcher::before {
+    content: "Tetra Assistant";
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-md);
+  }
+  .chat-launcher:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
 }
 
 .chat-launcher.hidden {
@@ -2122,9 +2151,13 @@ textarea.form-control {
   .chat-launcher {
     bottom: calc(16px + var(--safe-bottom));
     right: 16px;
-    padding: 10px 18px;
-    font-size: 0.85rem;
-    min-height: 44px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .scroll-top-btn {

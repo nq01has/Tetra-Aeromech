@@ -50,10 +50,13 @@ DirectoryIndex index.html
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    # Route API requests to PHP backend
+    RewriteRule ^api(/.*)?$ api.php [QSA,L]
+
     # Serve index.html for any path (SPA-style fallback)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^ /tetra-aeromech/index.html [L]
+    RewriteRule ^ index.html [L]
 </IfModule>
 
 # ── Block Hidden Files ────────────────────────────────────────────────────────

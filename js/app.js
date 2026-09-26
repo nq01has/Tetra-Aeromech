@@ -8,111 +8,119 @@
   let csrfToken = "";
   let currentLang = "en";
 
-  // Preloaded Components Dataset
+  // Official Manufactured Precision Components Dataset (from Company Profile)
   const componentsList = [
     {
-      id: "blisk-inconel",
-      title: "5-Axis High-Pressure Turbine Blisk",
+      id: "avionics-chassis",
+      title: "Avionics Chassis Baseplate",
       sector: "aerospace",
-      sectorLabel: "Aerospace & Space Propulsion",
-      material: "Inconel 718 (AMS 5662 / NACE MR0175)",
-      tolerance: "±0.005 mm (5 microns)",
-      surface_finish: "Ra 0.4 µm",
-      process: "Simultaneous 5-Axis High-Speed VMC Milling & Dynamic Balancing",
-      gdt: "Profile of a Surface 0.008 mm, Runout 0.004 mm",
-      traceability: "EN 10204 3.2 Mill Certificate, Ultrasonic NDT Inspected",
-      badge: "Aerospace Critical"
+      sectorLabel: "Aerospace & Avionics Defense",
+      image: "/images/comp5_avionics_chassis.png",
+      material: "Aerospace Aluminum 7075-T651 / 6061-T6",
+      tolerance: "±0.005 mm (Sub-Micron Webbing)",
+      surface_finish: "Ra 0.4 µm + MIL-A-8625 Hard Anodize",
+      process: "5-Axis Simultaneous Precision VMC Pocketing",
+      gdt: "Flatness 0.005 mm, True Position Ø0.008 mm",
+      traceability: "AS9102 FAIR Form 1-3, 100% CMM Verified",
+      badge: "5-Axis Aerospace"
     },
     {
-      id: "hydraulic-manifold-ti",
-      title: "Flight Control Hydraulic Manifold",
-      sector: "defense",
-      sectorLabel: "Aerospace & Defense Aviation",
-      material: "Titanium Ti-6Al-4V Grade 5 (AMS 4928)",
-      tolerance: "±0.003 mm (3 microns)",
-      surface_finish: "Ra 0.2 µm (Honed Bores)",
-      process: "Multi-Axis Mill-Turn with Deep-Hole Gundrilling & Ultrasonic De-burr",
-      gdt: "True Position Ø0.005 mm at MMC, Concentricity 0.003 mm",
-      traceability: "AS9102 FAIR Report, FPI Dye-Penetrant Inspected",
-      badge: "Defense Class"
-    },
-    {
-      id: "actuator-bracket-7075",
-      title: "Avionics Actuator Structural Bracket",
-      sector: "defense",
-      sectorLabel: "Commercial & Defense Aircraft",
-      material: "Aerospace Aluminum 7075-T651 (AMS 4045)",
-      tolerance: "±0.008 mm",
-      surface_finish: "Ra 0.8 µm + Type III Hard Anodize",
-      process: "High-Speed 4-Axis CNC Machining from Monolithic Billet",
-      gdt: "Perpendicularity 0.010 mm, Flatness 0.006 mm",
-      traceability: "Batch Hardness Tested (Rockwell B), Conductivity Checked",
-      badge: "Structural Grade"
-    },
-    {
-      id: "landing-gear-pin",
-      title: "Main Landing Gear Trunnion Pivot Pin",
-      sector: "defense",
-      sectorLabel: "Defense & Commercial Aerospace",
-      material: "15-5 PH Stainless Steel Condition H1025 (AMS 5659)",
-      tolerance: "±0.002 mm (2 microns)",
-      surface_finish: "Ra 0.15 µm (Super-Finished Ground)",
-      process: "CNC Turning, Vacuum Heat Treatment & Precision Cylindrical Grinding",
-      gdt: "Cylindricity 0.002 mm, Total Runout 0.003 mm",
-      traceability: "Magnetic Particle Inspection (MPI), Micro-Hardness Tested",
-      badge: "High Fatigue Life"
-    },
-    {
-      id: "cold-plate-enclosure",
-      title: "Liquid-Cooled Radar Cold Plate Enclosure",
-      sector: "defense",
-      sectorLabel: "Defense Electronics & Avionics",
-      material: "Aluminum 6061-T6 (AMS 4027)",
-      tolerance: "±0.006 mm",
-      surface_finish: "Ra 0.4 µm + Chemical Conversion (MIL-DTL-5541)",
-      process: "Micro-Channel CNC End Milling with Vacuum Brazing Alignment",
-      gdt: "Flatness 0.005 mm across 400 mm span",
+      id: "finned-coldplate",
+      title: "Finned Cold Plate (Thin Fin)",
+      sector: "thermal",
+      sectorLabel: "Thermal Management & Electronics",
+      image: "/images/comp8_finned_coldplate.png",
+      material: "Oxygen-Free Copper C11000 / Al 6063",
+      tolerance: "±0.003 mm Fin Thickness (0.5 mm Fins)",
+      surface_finish: "Ra 0.2 µm Mirror Finish",
+      process: "High-Aspect Ratio Thin-Fin EDM & Micro-Milling",
+      gdt: "Fin Parallelism 0.004 mm, Vacuum Seal Lip Flatness 0.003 mm",
       traceability: "Helium Mass-Spectrometer Leak Tested (< 10⁻⁸ mbar·l/s)",
-      badge: "Thermal Mission Critical"
+      badge: "High-Aspect Thin Fin"
     },
     {
-      id: "differential-pinion",
-      title: "High-Precision Transmission Pinion Shaft",
-      sector: "automotive",
-      sectorLabel: "High-Performance Automotive & EV",
-      material: "8620 Alloy Steel / Carburized (AMS 6274)",
-      tolerance: "±0.004 mm",
-      surface_finish: "Ra 0.2 µm",
-      process: "CNC Turn-Mill, Case Hardening (58-62 HRC), CNC Gear Grinding",
-      gdt: "Concentricity 0.003 mm, Tooth Lead Error < 0.002 mm",
-      traceability: "Case Depth & Microstructure Certified via Metallography",
-      badge: "EV Powertrain"
+      id: "clevis-shafts",
+      title: "Turned & Milled Clevis Shafts",
+      sector: "shafts",
+      sectorLabel: "Flight Control & Mechanical Linkages",
+      image: "/images/comp1_clevis_shafts.png",
+      material: "17-4 PH / 15-5 PH Stainless Steel (Condition H1025)",
+      tolerance: "±0.002 mm Cylindrical Bore & O.D.",
+      surface_finish: "Ra 0.15 µm Ground & Polished",
+      process: "Dual-Operation CNC Turning & 4-Axis Milling",
+      gdt: "Concentricity 0.003 mm, Fork Symmetrical Alignment 0.004 mm",
+      traceability: "Magnetic Particle Inspection (MPI), Mill Cert 3.1",
+      badge: "Dual Turn-Mill"
     },
     {
-      id: "hydraulic-spool-valve",
-      title: "Subsea High-Pressure Directional Spool Valve",
-      sector: "industrial",
-      sectorLabel: "High-Pressure Industrial Hydraulics",
-      material: "Duplex Stainless Steel 2205 (UNS S31803)",
-      tolerance: "±0.0025 mm",
-      surface_finish: "Ra 0.1 µm (Micro-Lapped Spool Lands)",
-      process: "High-Precision Turning, Sub-Zero Cryo-Treatment & Diamond Lapping",
-      gdt: "Cylindricity 0.0015 mm, Bore Clearance 0.003 mm matched",
-      traceability: "Hydrostatic Pressure Tested to 10,000 PSI",
-      badge: "Subsea Extreme"
+      id: "slotted-guide",
+      title: "2.1mm Micro-Slotted Guide",
+      sector: "tooling",
+      sectorLabel: "Micro Metrology & Tooling Guides",
+      image: "/images/comp2_slotted_guide.png",
+      material: "Hardened Tool Steel D2 / H13 (58-62 HRC)",
+      tolerance: "±0.002 mm Critical Slot Width (2.100 mm)",
+      surface_finish: "Ra 0.1 µm Precision EDM Wire Lapped",
+      process: "Micro-Slotting, Precision Wire EDM & Cryo Stress Relief",
+      gdt: "Perpendicularity 0.002 mm, Sidewall Parallelism 0.002 mm",
+      traceability: "Zeiss Optical CMM Scanning, Hardness Certified",
+      badge: "Precision EDM"
     },
     {
-      id: "satellite-propellant-housing",
-      title: "Spacecraft Cold-Gas Thruster Valve Body",
+      id: "treated-bracket",
+      title: "Treated Guide Bracket",
       sector: "aerospace",
-      sectorLabel: "Space & Satellite Systems",
-      material: "Titanium Ti-6Al-4V ELI (Extra Low Interstitials)",
-      tolerance: "±0.003 mm",
-      surface_finish: "Ra 0.2 µm (Electropolished Bores)",
-      process: "5-Axis Micro-Milling with Wire EDM Precision Orifices",
-      gdt: "Perpendicularity 0.004 mm, Seat Leak-Tightness Verified",
-      traceability: "Cleanroom Cleaned & Packaged under ISO Class 5 Laminar Flow",
-      badge: "Flight Space Rated"
+      sectorLabel: "Structural Airframe & Automation Mounts",
+      image: "/images/comp3_treated_bracket.png",
+      material: "Titanium Ti-6Al-4V Grade 5 / Alloy Steel",
+      tolerance: "±0.005 mm Datum Alignment",
+      surface_finish: "Ra 0.4 µm + AMS 2700 Chemical Passivation",
+      process: "Monolithic 5-Axis VMC Machining & Surface Treatment",
+      gdt: "Profile of Surface 0.008 mm, Angularity 0.005 mm",
+      traceability: "Fluorescent Penetrant Inspected (FPI Level 3)",
+      badge: "Surface Treated"
+    },
+    {
+      id: "brass-bushing",
+      title: "Precision Brass Bushing",
+      sector: "bearings",
+      sectorLabel: "High-Wear Spindle & Pivot Friction Joints",
+      image: "/images/comp6_brass_bushing.png",
+      material: "High-Tensile Phosphor Bronze SAE 660 / High-Leaded Brass",
+      tolerance: "H7 Internal Bore (+0.008/-0.000 mm)",
+      surface_finish: "Ra 0.2 µm Diamond Turned",
+      process: "High-Tolerance CNC Turning with Internal Spiral Lube Grooves",
+      gdt: "Cylindricity 0.002 mm, Runout < 0.003 mm",
+      traceability: "100% Air-Gauge Diameter Inspected",
+      badge: "High-Tolerance Turn"
+    },
+    {
+      id: "star-shims",
+      title: "Precision Star Shims & Spacers",
+      sector: "tooling",
+      sectorLabel: "Micro Metrology & Spindle Preload",
+      image: "/images/comp4_star_shims.png",
+      material: "Hardened Spring Steel / Titanium Grade 5",
+      tolerance: "±0.001 mm Thickness Calibration",
+      surface_finish: "Ra 0.1 µm Lapped & Burr-Free",
+      process: "Sub-Micron Laser Stamping & Wire EDM Profiling",
+      gdt: "Flatness 0.0015 mm, Thickness Uniformity < 1 Micron",
+      traceability: "Dial Indicator & Micrometer Calibration Batch Matrix",
+      badge: "Sub-Micron Calibration"
+    },
+    {
+      id: "portfolio-collection",
+      title: "Precision Machined Assembly Portfolio",
+      sector: "aerospace",
+      sectorLabel: "Aerospace, Defense, Medical & Automobile",
+      image: "/images/comp7_portfolio_collection.png",
+      material: "Inconel 718, Ti-6Al-4V, 7075-T6, 17-4 PH, Brass",
+      tolerance: "Sub-Micron to ±0.002 mm",
+      surface_finish: "Ra 0.15 µm to Ra 0.8 µm",
+      process: "End-to-End CNC, VMC, Turning, EDM & Qualified Surface Processes",
+      gdt: "ASME Y14.5 / ISO 1101 Full GD&T Compliance",
+      traceability: "AS9100D Aligned, ISO 9001:2015, AS9102 FAIR",
+      badge: "Comprehensive Portfolio"
     }
   ];
 
@@ -166,7 +174,7 @@
   }
 
   // ------------------------------------------------------------------
-  // Tabbed Capabilities Picker
+  // Tabbed Capabilities Picker & Machinery Switcher
   // ------------------------------------------------------------------
   window.switchTab = function (tabId) {
     document.querySelectorAll(".tab-btn").forEach(btn => {
@@ -178,11 +186,28 @@
     });
   };
 
+  window.switchMachineTab = function (panelId) {
+    document.querySelectorAll(".machine-nav-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.getAttribute("data-machine") === panelId);
+    });
+
+    document.querySelectorAll(".machine-showcase-panel").forEach(panel => {
+      panel.classList.toggle("active", panel.id === `machine-${panelId}`);
+    });
+  };
+
   function initTabs() {
     document.querySelectorAll(".tab-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const tab = btn.getAttribute("data-tab");
         window.switchTab(tab);
+      });
+    });
+
+    document.querySelectorAll(".machine-nav-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const machine = btn.getAttribute("data-machine");
+        window.switchMachineTab(machine);
       });
     });
   }
@@ -200,32 +225,35 @@
 
     container.innerHTML = filtered.map(c => `
       <div class="comp-card" data-id="${c.id}">
+        <div class="comp-img-wrap">
+          <img src="${c.image}" alt="${c.title}" class="comp-img" loading="lazy">
+        </div>
         <div class="comp-header">
           <span class="comp-badge">${c.badge}</span>
-          <span class="comp-sector">${c.sectorLabel}</span>
+          <span class="comp-sector">${c.sectorLabel.split("&")[0]}</span>
         </div>
         <h3 class="comp-title">${c.title}</h3>
         <div class="comp-meta-grid">
           <div class="comp-meta-item">
             <span class="comp-meta-lbl">Alloy Material</span>
-            <span class="comp-meta-val">${c.material}</span>
+            <span class="comp-meta-val">${c.material.split("/")[0]}</span>
           </div>
           <div class="comp-meta-item">
-            <span class="comp-meta-lbl">Tolerance Class</span>
-            <span class="comp-meta-val text-blue font-mono">${c.tolerance}</span>
+            <span class="comp-meta-lbl">Critical Tolerance</span>
+            <span class="comp-meta-val text-blue font-mono">${c.tolerance.split("(")[0]}</span>
           </div>
           <div class="comp-meta-item">
             <span class="comp-meta-lbl">Surface Finish</span>
-            <span class="comp-meta-val">${c.surface_finish}</span>
+            <span class="comp-meta-val font-mono">${c.surface_finish.split("+")[0]}</span>
           </div>
           <div class="comp-meta-item">
-            <span class="comp-meta-lbl">Process Cell</span>
+            <span class="comp-meta-lbl">Machining Cell</span>
             <span class="comp-meta-val">${c.process.split("&")[0]}</span>
           </div>
         </div>
         <div>
           <button class="btn btn-sm btn-outline btn-block" onclick="window.inspectComponent('${c.id}')">
-            Inspect Blueprint & GD&T Telemetry
+            Inspect Blueprint & Telemetry
           </button>
         </div>
       </div>
@@ -258,44 +286,48 @@
         <button class="modal-close" onclick="window.closeCompModal()">&times;</button>
       </div>
 
-      <div style="background-color: var(--bg-canvas); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 24px;">
-        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--sap-blue); margin-bottom: 12px;">
+      <div style="text-align: center; background: radial-gradient(circle at center, rgba(0, 112, 242, 0.05) 0%, rgba(248, 250, 252, 1) 100%); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 20px;">
+        <img src="${comp.image}" alt="${comp.title}" style="max-height: 180px; width: auto; max-width: 90%; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.12));">
+      </div>
+
+      <div style="background-color: var(--bg-canvas); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--sap-blue); margin-bottom: 8px;">
           <span>DRAWING REF: TA-ENG-2026-D</span>
           <span>DATUM [A|B|C] VERIFIED</span>
         </div>
-        <div style="text-align: center; padding: 18px 0;">
-          <div style="display: inline-block; border: 2px solid var(--sap-blue); padding: 8px 24px; border-radius: var(--radius-xs); background: #FFFFFF; font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: var(--sap-blue);">
+        <div style="text-align: center; padding: 10px 0;">
+          <div style="display: inline-block; border: 2px solid var(--sap-blue); padding: 6px 20px; border-radius: var(--radius-xs); background: #FFFFFF; font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; color: var(--sap-blue);">
             ⌀ ${comp.tolerance}
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 12px;">
+        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">
           <span>INSPECTION: ZEISS CMM SCANNING</span>
-          <span style="color: #107E3E; font-weight: 700;">STATUS: PASS (Cpk = 1.74)</span>
+          <span style="color: #107E3E; font-weight: 700;">STATUS: PASS (Cpk = 1.78)</span>
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">Material Specification</span>
           <span style="font-weight: 600;">${comp.material}</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">Dimensional Tolerance</span>
           <span style="font-weight: 700; color: var(--sap-blue); font-family: var(--font-mono);">${comp.tolerance}</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">Surface Roughness</span>
           <span style="font-weight: 600; font-family: var(--font-mono);">${comp.surface_finish}</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">Machining Process</span>
           <span style="font-weight: 600;">${comp.process}</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">GD&T Callout</span>
           <span style="font-weight: 600; font-family: var(--font-mono);">${comp.gdt}</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--bg-canvas); border-radius: var(--radius-xs); font-size: 0.88rem;">
           <span style="color: var(--text-muted);">Quality & Traceability</span>
           <span style="font-weight: 600;">${comp.traceability}</span>
         </div>
@@ -310,6 +342,13 @@
     `;
 
     modal.classList.add("active");
+  };
+
+  window.requestQuoteForComponent = function (id) {
+    const comp = componentsList.find(c => c.id === id);
+    if (comp) {
+      window.prefillRFQ(comp.title, comp.material, comp.tolerance);
+    }
   };
 
   window.closeCompModal = function () {
